@@ -5,6 +5,8 @@ struct Sensor: Identifiable, Decodable, Encodable {
     let value: Int
     let unit: String
     
+    static var samples: [Sensor] = [Sensor.sampleHumidity, Sensor.sampleTemperature]
+    
     static var sampleHumidity: Sensor {
         return Sensor(id: "0", image: "drop", title: "Humidité", value: 56, unit: "%")
     }

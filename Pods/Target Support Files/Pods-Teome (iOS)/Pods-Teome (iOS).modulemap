@@ -1,0 +1,6 @@
+framework module Pods_Teome__iOS_ {
+  umbrella header "Pods-Teome (iOS)-umbrella.h"
+
+  export *
+  module * { export * }
+}

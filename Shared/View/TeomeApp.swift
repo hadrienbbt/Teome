@@ -1,14 +1,13 @@
-//
-//  TeomeApp.swift
-//  Shared
-//
-//  Created by Hadrien Barbat on 17/11/2021.
-//
-
 import SwiftUI
+import Firebase
 
 @main
 struct TeomeApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             SensorList()

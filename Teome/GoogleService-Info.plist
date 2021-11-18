@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>428382573195-6vs09fi55cgupnh2cvlhk3t3kplas485.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.428382573195-6vs09fi55cgupnh2cvlhk3t3kplas485</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD1y2zxIERj3-EzRQAXNcBvhHZDtGKBE_E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>428382573195</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>fr.fedutia.Teome</string>
+	<key>PROJECT_ID</key>
+	<string>meteo-e8f60</string>
+	<key>STORAGE_BUCKET</key>
+	<string>meteo-e8f60.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:428382573195:ios:141cead3be8b7c20e5ba8e</string>
+</dict>
+</plist>
