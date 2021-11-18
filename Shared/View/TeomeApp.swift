@@ -11,7 +11,7 @@ import SwiftUI
 struct TeomeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SensorList()
         }
     }
 }

@@ -9,19 +9,34 @@
 /* Begin PBXBuildFile section */
 		48B539BE274509DE009A26B0 /* TeomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AE274509D5009A26B0 /* TeomeApp.swift */; };
 		48B539BF274509DE009A26B0 /* TeomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AE274509D5009A26B0 /* TeomeApp.swift */; };
-		48B539C0274509DE009A26B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AF274509D5009A26B0 /* ContentView.swift */; };
-		48B539C1274509DE009A26B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AF274509D5009A26B0 /* ContentView.swift */; };
-		48B539C2274509DE009A26B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B539B0274509DD009A26B0 /* Assets.xcassets */; };
-		48B539C3274509DE009A26B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B539B0274509DD009A26B0 /* Assets.xcassets */; };
+		48B539C0274509DE009A26B0 /* SensorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AF274509D5009A26B0 /* SensorList.swift */; };
+		48B539C1274509DE009A26B0 /* SensorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AF274509D5009A26B0 /* SensorList.swift */; };
+		48B539CD2746C552009A26B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B539CC2746C552009A26B0 /* Assets.xcassets */; };
+		48B539CE2746C552009A26B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B539CC2746C552009A26B0 /* Assets.xcassets */; };
+		48B539D02746E2EF009A26B0 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539CF2746E2EE009A26B0 /* ValueStore.swift */; };
+		48B539D12746E2EF009A26B0 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539CF2746E2EE009A26B0 /* ValueStore.swift */; };
+		48B539D62746E790009A26B0 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539D52746E790009A26B0 /* Widget.swift */; };
+		48B539D72746E790009A26B0 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539D52746E790009A26B0 /* Widget.swift */; };
+		48B539D92746E861009A26B0 /* SensorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539D82746E861009A26B0 /* SensorViewModel.swift */; };
+		48B539DA2746E861009A26B0 /* SensorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539D82746E861009A26B0 /* SensorViewModel.swift */; };
+		48B539DC2746E899009A26B0 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539DB2746E899009A26B0 /* Sensor.swift */; };
+		48B539DD2746E899009A26B0 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539DB2746E899009A26B0 /* Sensor.swift */; };
+		48B539E02746E973009A26B0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539DF2746E973009A26B0 /* extensions.swift */; };
+		48B539E12746E973009A26B0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539DF2746E973009A26B0 /* extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48B539AE274509D5009A26B0 /* TeomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeomeApp.swift; sourceTree = "<group>"; };
-		48B539AF274509D5009A26B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		48B539B0274509DD009A26B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48B539AF274509D5009A26B0 /* SensorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorList.swift; sourceTree = "<group>"; };
 		48B539B5274509DE009A26B0 /* Teome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B539BB274509DE009A26B0 /* Teome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B539BD274509DE009A26B0 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		48B539CC2746C552009A26B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48B539CF2746E2EE009A26B0 /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
+		48B539D52746E790009A26B0 /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
+		48B539D82746E861009A26B0 /* SensorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorViewModel.swift; sourceTree = "<group>"; };
+		48B539DB2746E899009A26B0 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		48B539DF2746E973009A26B0 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				48B539AD274509D5009A26B0 /* Shared */,
+				48B539CC2746C552009A26B0 /* Assets.xcassets */,
 				48B539BC274509DE009A26B0 /* macOS */,
 				48B539B6274509DE009A26B0 /* Products */,
 			);
@@ -54,9 +70,10 @@
 		48B539AD274509D5009A26B0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				48B539AE274509D5009A26B0 /* TeomeApp.swift */,
-				48B539AF274509D5009A26B0 /* ContentView.swift */,
-				48B539B0274509DD009A26B0 /* Assets.xcassets */,
+				48B539D22746E763009A26B0 /* ViewModel */,
+				48B539D32746E76D009A26B0 /* Model */,
+				48B539D42746E772009A26B0 /* View */,
+				48B539DE2746E8E1009A26B0 /* Utils */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -76,6 +93,41 @@
 				48B539BD274509DE009A26B0 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		48B539D22746E763009A26B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				48B539D82746E861009A26B0 /* SensorViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		48B539D32746E76D009A26B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48B539DB2746E899009A26B0 /* Sensor.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48B539D42746E772009A26B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48B539AE274509D5009A26B0 /* TeomeApp.swift */,
+				48B539AF274509D5009A26B0 /* SensorList.swift */,
+				48B539D52746E790009A26B0 /* Widget.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		48B539DE2746E8E1009A26B0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				48B539CF2746E2EE009A26B0 /* ValueStore.swift */,
+				48B539DF2746E973009A26B0 /* extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B539C2274509DE009A26B0 /* Assets.xcassets in Resources */,
+				48B539CD2746C552009A26B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B539C3274509DE009A26B0 /* Assets.xcassets in Resources */,
+				48B539CE2746C552009A26B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,8 +228,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B539C0274509DE009A26B0 /* ContentView.swift in Sources */,
+				48B539D92746E861009A26B0 /* SensorViewModel.swift in Sources */,
+				48B539DC2746E899009A26B0 /* Sensor.swift in Sources */,
+				48B539C0274509DE009A26B0 /* SensorList.swift in Sources */,
+				48B539E02746E973009A26B0 /* extensions.swift in Sources */,
+				48B539D02746E2EF009A26B0 /* ValueStore.swift in Sources */,
 				48B539BE274509DE009A26B0 /* TeomeApp.swift in Sources */,
+				48B539D62746E790009A26B0 /* Widget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,8 +242,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B539C1274509DE009A26B0 /* ContentView.swift in Sources */,
+				48B539DA2746E861009A26B0 /* SensorViewModel.swift in Sources */,
+				48B539DD2746E899009A26B0 /* Sensor.swift in Sources */,
+				48B539C1274509DE009A26B0 /* SensorList.swift in Sources */,
+				48B539E12746E973009A26B0 /* extensions.swift in Sources */,
+				48B539D12746E2EF009A26B0 /* ValueStore.swift in Sources */,
 				48B539BF274509DE009A26B0 /* TeomeApp.swift in Sources */,
+				48B539D72746E790009A26B0 /* Widget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
