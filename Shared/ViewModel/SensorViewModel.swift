@@ -41,10 +41,13 @@ class SensorViewModel: ObservableObject {
                 }
                 guard let value = snap.data(),
                       let humidity = value["humidity"] as? Double,
-                      let temperature = value["temperature"] as? Double else { return }
+                      let temperature = value["temperature"] as? Double,
+                      let illuminance = value["illuminance"] as? Double else { return }
                 
                 print("Humidity: \(humidity)")
                 print("Temperature: \(temperature)")
+                print("Illuminance: \(illuminance)")
+                self.sensors = Sensor.samples
             }
     }
     

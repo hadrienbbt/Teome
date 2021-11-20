@@ -1,36 +1,28 @@
-//
-//  ContentView.swift
-//  Shared
-//
-//  Created by Hadrien Barbat on 17/11/2021.
-//
-
 import SwiftUI
 
 
 struct SensorList: View {
     @ObservedObject var viewModel = SensorViewModel()
+    @State private var selectedId: String?
     
-    init() {
-        let navBarAppearance = UINavigationBar.appearance()
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-    }
+    let columns = [
+        GridItem(.adaptive(minimum: 140), spacing: 20)
+    ]
+    
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-                HStack(spacing: 20) {
+            VStack {
+                LazyVGrid(columns: columns, spacing: 20) {
                     ForEach($viewModel.sensors) {
-                        Widget(sensor: $0)
+                        Widget(sensor: $0, selectedId: $selectedId)
                     }
                 }
+                .padding()
                 Spacer()
             }
-            .navigationBarTitle("Teome")
-            .foregroundColor(.white)
-            .padding()
             .withBackgoundGradient()
+            .navigationBarTitle("Sensors")
         }
         .onAppear {
             viewModel.fetchSensors()
