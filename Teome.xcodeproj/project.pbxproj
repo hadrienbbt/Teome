@@ -8,8 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		371848A193F54354551BEECB /* Pods_Teome__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ED194B470B5CAC707D9BA6 /* Pods_Teome__iOS_.framework */; };
+		4834ABF7274A89380035DC6E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4834ABF6274A89380035DC6E /* NetworkExtension.framework */; };
+		4834ABF9274A89DE0035DC6E /* HotspotConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4834ABF8274A89DE0035DC6E /* HotspotConfiguration.swift */; };
+		4834ABFA274A89DE0035DC6E /* HotspotConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4834ABF8274A89DE0035DC6E /* HotspotConfiguration.swift */; };
+		4834ABFD274A8F4D0035DC6E /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = 4834ABFC274A8F4D0035DC6E /* Swifter */; };
+		4834ABFF274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4834ABFE274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift */; };
+		4834AC00274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4834ABFE274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift */; };
+		4834AC02274AD7C90035DC6E /* LocationPermissionAsker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4834AC01274AD7C90035DC6E /* LocationPermissionAsker.swift */; };
+		4834AC03274AD7C90035DC6E /* LocationPermissionAsker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4834AC01274AD7C90035DC6E /* LocationPermissionAsker.swift */; };
+		4842F5B7274AEB29002EB954 /* DeviceCom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5B6274AEB29002EB954 /* DeviceCom.swift */; };
+		4842F5B8274AEB29002EB954 /* DeviceCom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5B6274AEB29002EB954 /* DeviceCom.swift */; };
+		4842F5BA274BADF6002EB954 /* PairDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5B9274BADF6002EB954 /* PairDevice.swift */; };
+		4842F5BB274BADF6002EB954 /* PairDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5B9274BADF6002EB954 /* PairDevice.swift */; };
+		4842F5BD274BB789002EB954 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5BC274BB789002EB954 /* BackgroundGradient.swift */; };
+		4842F5BE274BB789002EB954 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5BC274BB789002EB954 /* BackgroundGradient.swift */; };
+		4842F5C3274BBE1C002EB954 /* SSIDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5C2274BBE1C002EB954 /* SSIDViewModel.swift */; };
+		4842F5C4274BBE1C002EB954 /* SSIDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5C2274BBE1C002EB954 /* SSIDViewModel.swift */; };
+		4842F5C6274ED32B002EB954 /* SSIDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5C5274ED32A002EB954 /* SSIDList.swift */; };
+		4842F5C7274ED32B002EB954 /* SSIDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5C5274ED32A002EB954 /* SSIDList.swift */; };
+		487E9B1C2749E7ED00049C76 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 487E9B1B2749E7ED00049C76 /* CodeScanner */; };
 		488789AE274976BD00241835 /* WidgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789AD274976BD00241835 /* WidgetDetails.swift */; };
 		488789AF274976BD00241835 /* WidgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789AD274976BD00241835 /* WidgetDetails.swift */; };
+		488789B227499F6C00241835 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 488789B127499F6C00241835 /* QRCode */; };
+		488789B427499F8800241835 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 488789B327499F8800241835 /* QRCode */; };
+		488789B62749A20B00241835 /* TeomeQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789B52749A20B00241835 /* TeomeQRCode.swift */; };
+		488789B72749A20B00241835 /* TeomeQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789B52749A20B00241835 /* TeomeQRCode.swift */; };
 		48B539BE274509DE009A26B0 /* TeomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AE274509D5009A26B0 /* TeomeApp.swift */; };
 		48B539BF274509DE009A26B0 /* TeomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AE274509D5009A26B0 /* TeomeApp.swift */; };
 		48B539C0274509DE009A26B0 /* SensorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AF274509D5009A26B0 /* SensorList.swift */; };
@@ -35,7 +58,18 @@
 		09ED194B470B5CAC707D9BA6 /* Pods_Teome__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teome__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C681E5E10A2C5996DCDA1F /* Pods-Teome (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teome (macOS).release.xcconfig"; path = "Target Support Files/Pods-Teome (macOS)/Pods-Teome (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		2A671F2D3DD84C843599BFE5 /* Pods-Teome (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teome (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Teome (iOS)/Pods-Teome (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		4834ABF5274A89380035DC6E /* Teome (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Teome (iOS).entitlements"; sourceTree = "<group>"; };
+		4834ABF6274A89380035DC6E /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
+		4834ABF8274A89DE0035DC6E /* HotspotConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotConfiguration.swift; sourceTree = "<group>"; };
+		4834ABFE274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifterMobileConfigDistributionServer.swift; sourceTree = "<group>"; };
+		4834AC01274AD7C90035DC6E /* LocationPermissionAsker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionAsker.swift; sourceTree = "<group>"; };
+		4842F5B6274AEB29002EB954 /* DeviceCom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCom.swift; sourceTree = "<group>"; };
+		4842F5B9274BADF6002EB954 /* PairDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairDevice.swift; sourceTree = "<group>"; };
+		4842F5BC274BB789002EB954 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
+		4842F5C2274BBE1C002EB954 /* SSIDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSIDViewModel.swift; sourceTree = "<group>"; };
+		4842F5C5274ED32A002EB954 /* SSIDList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSIDList.swift; sourceTree = "<group>"; };
 		488789AD274976BD00241835 /* WidgetDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDetails.swift; sourceTree = "<group>"; };
+		488789B52749A20B00241835 /* TeomeQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeomeQRCode.swift; sourceTree = "<group>"; };
 		48B539AE274509D5009A26B0 /* TeomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeomeApp.swift; sourceTree = "<group>"; };
 		48B539AF274509D5009A26B0 /* SensorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorList.swift; sourceTree = "<group>"; };
 		48B539B5274509DE009A26B0 /* Teome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teome.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +92,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488789B227499F6C00241835 /* QRCode in Frameworks */,
+				4834ABF7274A89380035DC6E /* NetworkExtension.framework in Frameworks */,
 				371848A193F54354551BEECB /* Pods_Teome__iOS_.framework in Frameworks */,
+				487E9B1C2749E7ED00049C76 /* CodeScanner in Frameworks */,
+				4834ABFD274A8F4D0035DC6E /* Swifter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488789B427499F8800241835 /* QRCode in Frameworks */,
 				865FE617120E2374131BED1B /* Pods_Teome__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +126,7 @@
 		48B539A8274509D2009A26B0 = {
 			isa = PBXGroup;
 			children = (
+				4834ABF5274A89380035DC6E /* Teome (iOS).entitlements */,
 				48B539E82746FB15009A26B0 /* Teome */,
 				48B539AD274509D5009A26B0 /* Shared */,
 				48B539CC2746C552009A26B0 /* Assets.xcassets */,
@@ -129,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				48B539D82746E861009A26B0 /* SensorViewModel.swift */,
+				4842F5C2274BBE1C002EB954 /* SSIDViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -148,6 +189,10 @@
 				48B539AF274509D5009A26B0 /* SensorList.swift */,
 				48B539D52746E790009A26B0 /* Widget.swift */,
 				488789AD274976BD00241835 /* WidgetDetails.swift */,
+				488789B52749A20B00241835 /* TeomeQRCode.swift */,
+				4842F5BC274BB789002EB954 /* BackgroundGradient.swift */,
+				4842F5B9274BADF6002EB954 /* PairDevice.swift */,
+				4842F5C5274ED32A002EB954 /* SSIDList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +202,10 @@
 			children = (
 				48B539CF2746E2EE009A26B0 /* ValueStore.swift */,
 				48B539DF2746E973009A26B0 /* extensions.swift */,
+				4834ABF8274A89DE0035DC6E /* HotspotConfiguration.swift */,
+				4834ABFE274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift */,
+				4834AC01274AD7C90035DC6E /* LocationPermissionAsker.swift */,
+				4842F5B6274AEB29002EB954 /* DeviceCom.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -172,6 +221,7 @@
 		C110AEDA49AE08E44AF16260 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4834ABF6274A89380035DC6E /* NetworkExtension.framework */,
 				09ED194B470B5CAC707D9BA6 /* Pods_Teome__iOS_.framework */,
 				DCFD5E978F7DDECC3EA3D8D6 /* Pods_Teome__macOS_.framework */,
 			);
@@ -196,6 +246,11 @@
 			dependencies = (
 			);
 			name = "Teome (iOS)";
+			packageProductDependencies = (
+				488789B127499F6C00241835 /* QRCode */,
+				487E9B1B2749E7ED00049C76 /* CodeScanner */,
+				4834ABFC274A8F4D0035DC6E /* Swifter */,
+			);
 			productName = "Teome (iOS)";
 			productReference = 48B539B5274509DE009A26B0 /* Teome.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +270,9 @@
 			dependencies = (
 			);
 			name = "Teome (macOS)";
+			packageProductDependencies = (
+				488789B327499F8800241835 /* QRCode */,
+			);
 			productName = "Teome (macOS)";
 			productReference = 48B539BB274509DE009A26B0 /* Teome.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +304,11 @@
 				Base,
 			);
 			mainGroup = 48B539A8274509D2009A26B0;
+			packageReferences = (
+				488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */,
+				487E9B1A2749E7ED00049C76 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				4834ABFB274A8F4D0035DC6E /* XCRemoteSwiftPackageReference "swifter" */,
+			);
 			productRefGroup = 48B539B6274509DE009A26B0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,14 +426,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4842F5C3274BBE1C002EB954 /* SSIDViewModel.swift in Sources */,
+				4834AC02274AD7C90035DC6E /* LocationPermissionAsker.swift in Sources */,
 				488789AE274976BD00241835 /* WidgetDetails.swift in Sources */,
 				48B539D92746E861009A26B0 /* SensorViewModel.swift in Sources */,
 				48B539DC2746E899009A26B0 /* Sensor.swift in Sources */,
 				48B539C0274509DE009A26B0 /* SensorList.swift in Sources */,
+				4834ABF9274A89DE0035DC6E /* HotspotConfiguration.swift in Sources */,
 				48B539E02746E973009A26B0 /* extensions.swift in Sources */,
+				488789B62749A20B00241835 /* TeomeQRCode.swift in Sources */,
+				4842F5B7274AEB29002EB954 /* DeviceCom.swift in Sources */,
 				48B539D02746E2EF009A26B0 /* ValueStore.swift in Sources */,
 				48B539BE274509DE009A26B0 /* TeomeApp.swift in Sources */,
 				48B539D62746E790009A26B0 /* Widget.swift in Sources */,
+				4834ABFF274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift in Sources */,
+				4842F5BA274BADF6002EB954 /* PairDevice.swift in Sources */,
+				4842F5BD274BB789002EB954 /* BackgroundGradient.swift in Sources */,
+				4842F5C6274ED32B002EB954 /* SSIDList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,14 +450,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4842F5C4274BBE1C002EB954 /* SSIDViewModel.swift in Sources */,
+				4834AC03274AD7C90035DC6E /* LocationPermissionAsker.swift in Sources */,
 				488789AF274976BD00241835 /* WidgetDetails.swift in Sources */,
 				48B539DA2746E861009A26B0 /* SensorViewModel.swift in Sources */,
 				48B539DD2746E899009A26B0 /* Sensor.swift in Sources */,
 				48B539C1274509DE009A26B0 /* SensorList.swift in Sources */,
+				4834ABFA274A89DE0035DC6E /* HotspotConfiguration.swift in Sources */,
 				48B539E12746E973009A26B0 /* extensions.swift in Sources */,
+				488789B72749A20B00241835 /* TeomeQRCode.swift in Sources */,
+				4842F5B8274AEB29002EB954 /* DeviceCom.swift in Sources */,
 				48B539D12746E2EF009A26B0 /* ValueStore.swift in Sources */,
 				48B539BF274509DE009A26B0 /* TeomeApp.swift in Sources */,
 				48B539D72746E790009A26B0 /* Widget.swift in Sources */,
+				4834AC00274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift in Sources */,
+				4842F5BB274BADF6002EB954 /* PairDevice.swift in Sources */,
+				4842F5BE274BB789002EB954 /* BackgroundGradient.swift in Sources */,
+				4842F5C7274ED32B002EB954 /* SSIDList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,11 +590,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Teome (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Teome--iOS--Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR Code";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Fetch SSID list";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -540,11 +626,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Teome (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Teome--iOS--Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR Code";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Fetch SSID list";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -655,6 +746,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4834ABFB274A8F4D0035DC6E /* XCRemoteSwiftPackageReference "swifter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/httpswift/swifter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		487E9B1A2749E7ED00049C76 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmrschmidt/QRCode";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4834ABFC274A8F4D0035DC6E /* Swifter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4834ABFB274A8F4D0035DC6E /* XCRemoteSwiftPackageReference "swifter" */;
+			productName = Swifter;
+		};
+		487E9B1B2749E7ED00049C76 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 487E9B1A2749E7ED00049C76 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+		488789B127499F6C00241835 /* QRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */;
+			productName = QRCode;
+		};
+		488789B327499F8800241835 /* QRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */;
+			productName = QRCode;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48B539A9274509D2009A26B0 /* Project object */;
 }

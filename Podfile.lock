@@ -348,10 +348,12 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (1.2.12)
+  - WiFiQRCodeKit (1.1.1)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Firestore
+  - WiFiQRCodeKit (~> 1.0)
 
 SPEC REPOS:
   trunk:
@@ -371,6 +373,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - WiFiQRCodeKit
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -389,7 +392,8 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  WiFiQRCodeKit: 3579b90c3e4bb9696bcd8bea925fc8407d46ba4a
 
-PODFILE CHECKSUM: 420faed6732dc488277632a83f95c5f037c99b74
+PODFILE CHECKSUM: 640a5c66b47b581a86dddfec515bbf745ea7a7c2
 
 COCOAPODS: 1.10.1

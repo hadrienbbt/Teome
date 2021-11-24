@@ -8,6 +8,8 @@ target 'Teome (iOS)' do
   # Pods for Teome (iOS)
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
+  pod 'WiFiQRCodeKit', '~> 1.0'
+
 end
 
 target 'Teome (macOS)' do

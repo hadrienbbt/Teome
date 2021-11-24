@@ -6,11 +6,13 @@ struct TeomeApp: App {
     
     init() {
         FirebaseApp.configure()
+        UIScrollView.appearance().keyboardDismissMode = .onDrag
     }
     
     var body: some Scene {
         WindowGroup {
-            SensorList()
+            PairDevice()
+            // SensorList()
         }
     }
 }

@@ -16,22 +16,6 @@ class SensorViewModel: ObservableObject {
     
     func fetchSensors() {
         loading = true
-/*
-        let receiveCompletion: (Subscribers.Completion<Error>) -> Void = {
-            self.receiveCompletion($0)
-            callback?()
-        }
-        cancellable = URLSession.shared.dataTaskPublisher(for: url)
-            .timeout(10, scheduler: backgroundQueue)
-            .retry(3)
-            .map { $0.data }
-            .decode(type: [FrekPlace].self, decoder: FrekDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink(
-                receiveCompletion: receiveCompletion,
-                receiveValue: self.receiveFrekPlaces
-            )
-*/
         firestore.collection("sensors")
             .document("13861322")
             .getDocument { snap, error in
