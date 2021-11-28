@@ -1,8 +1,24 @@
 import Foundation
+import Network
 
 class ValueStore {
     
     let suiteName = "group.fr.fedutia.Teome"
+    
+    var deviceSSID: String? {
+        get { return read("deviceSSID") as? String }
+        set { write("deviceSSID", newValue) }
+    }
+    
+    var deviceId: String? {
+        guard let deviceSSID = deviceSSID else { return nil }
+        return deviceSSID.components(separatedBy: "-").last
+    }
+    
+    var deviceIP: Data? {
+        get { return read("deviceIP") as? Data }
+        set { write("deviceIP", newValue) }
+    }
     
     var sensors: [Sensor] {
         get {

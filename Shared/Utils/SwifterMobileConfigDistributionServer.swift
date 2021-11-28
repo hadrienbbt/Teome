@@ -1,7 +1,7 @@
 // SwifterMobileConfigDistributionServer.swift
-import Swifter
-import WiFiQRCodeKit
-
+// import Swifter
+// import WiFiQRCodeKit
+/*
 class SwifterMobileConfigDistributionServer: WiFiQRCodeKit.MobileConfig.DistributionServer {
     let distributionURL: URL
     private let server: Swifter.HttpServer
@@ -49,3 +49,4 @@ class SwifterMobileConfigDistributionServer: WiFiQRCodeKit.MobileConfig.Distribu
         self.mobileConfig = (data: mobileConfigData, mimeType: mimeType)
     }
 }
+*/

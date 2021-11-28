@@ -1,21 +1,53 @@
+import Foundation
+
 struct Sensor: Identifiable, Decodable, Encodable {
     let id: String
     let image: String
     let title: String
-    let value: Int
+    var value: Double
     let unit: String
     
-    static var samples: [Sensor] = [.sampleHumidity, .sampleTemperature, .sampleLight]
-    
-    static var sampleHumidity: Sensor {
-        return Sensor(id: "0", image: "drop", title: "Humidité", value: 56, unit: "%")
+    var formattedValue: String {
+        return String(Double(round(10 * value) / 10))
     }
     
-    static var sampleTemperature: Sensor {
-        return Sensor(id: "1", image: "thermometer", title: "Température", value: 34, unit: "°C")
+    init(sensorType: SensorType, _ value: Double = 0) {
+        self.id = sensorType.rawValue
+        self.value = value
+        switch sensorType {
+        case .humidity:
+            self.image = "drop"
+            self.title = "Humidité"
+            self.unit = "%"
+        case .temperature:
+            self.image = "thermometer"
+            self.title = "Température"
+            self.unit = "°C"
+        case .illuminance:
+            self.image = "sun"
+            self.title = "Luminosité"
+            self.unit = "lux"
+        }
     }
+}
+
+enum SensorType: String, CaseIterable {
+    case humidity
+    case temperature
+    case illuminance
     
-    static var sampleLight: Sensor {
-        return Sensor(id: "2", image: "sun", title: "Luminosité", value: 300, unit: "lux")
+    static var samples: [Sensor] = SensorType.allCases.map { $0.sample }
+    
+    var sample: Sensor {
+        var sensor = Sensor(sensorType: self)
+        switch self {
+        case .humidity:
+            sensor.value = 56
+        case .temperature:
+            sensor.value = 34
+        case .illuminance:
+            sensor.value = 300
+        }
+        return sensor
     }
 }

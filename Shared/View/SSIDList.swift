@@ -5,7 +5,7 @@ struct SSIDList: View {
     
     @State private var selected: String?
     @State private var password = ""
-     
+    
     func isSelected(_ ssid: String) -> Binding<Bool> {
         return Binding(
             get: { ssid == selected },
@@ -20,30 +20,34 @@ struct SSIDList: View {
                     .font(.headline)
                 Spacer()
             }
-            if viewModel.loading {
-                CenteredProgressView()
-            } else if viewModel.deviceReachableSSIDs.isEmpty {
-                Text("Aucun réseau trouvé")
-                    .padding(.top)
-            } else if viewModel.connecting, let ssid = selected {
-                SSIDRow(ssid: ssid, connect: { },
-                    connecting: viewModel.connecting,
-                    password: $password,
-                    isSelected: isSelected(ssid)
-                )
-                .padding(.vertical)
+            if let loading = viewModel.loading {
+                if let ssid = selected {
+                    SSIDRow(ssid: ssid, connect: { },
+                            loading: loading,
+                            password: $password,
+                            isSelected: isSelected(ssid)
+                    ).padding(.vertical)
+                } else {
+                    CenteredProgressView(title: loading)
+                }
             } else {
-                ForEach(viewModel.deviceReachableSSIDs, id: \.self) { ssid in
-                    SSIDRow(
-                        ssid: ssid,
-                        connect: { viewModel.setDeviceCurrentSSID(ssid: ssid, pwd: password) },
-                        connecting: viewModel.connecting,
-                        password: $password,
-                        isSelected: isSelected(ssid)
-                    )
-                    .padding(.bottom)
+                if viewModel.deviceReachableSSIDs.isEmpty {
+                    Text("Aucun réseau trouvé").padding(.top)
+                } else {
+                    ForEach(viewModel.deviceReachableSSIDs, id: \.self) { ssid in
+                        SSIDRow(
+                            ssid: ssid,
+                            connect: { viewModel.setDeviceCurrentSSID(ssid, password) },
+                            loading: viewModel.loading,
+                            password: $password,
+                            isSelected: isSelected(ssid)
+                        ).padding(.bottom)
+                    }
                 }
             }
+        }
+        .alert("Mot de passe invalide", isPresented: $viewModel.isError) {
+            Button("OK", role: .cancel) { }
         }
     }
 }
@@ -51,7 +55,7 @@ struct SSIDList: View {
 struct SSIDRow: View {
     let ssid: String
     let connect: () -> Void
-    let connecting: Bool
+    let loading: String?
     
     @Binding var password: String
     @Binding var isSelected: Bool
@@ -64,7 +68,7 @@ struct SSIDRow: View {
                 Divider()
             }
             Button(ssid, action: {
-                if !connecting {
+                if loading == nil {
                     isSelected.toggle()
                 }
             })
@@ -79,8 +83,8 @@ struct SSIDRow: View {
                         Image(systemName: self.passwordVisible ? "eye.slash" : "eye")
                     }
                 }
-                if connecting {
-                    CenteredProgressView(title: "Envoi des identifiants WiFi")
+                if let loading = loading {
+                    CenteredProgressView(title: loading)
                 } else {
                     Button(action: { self.connect() }) {
                         Text("Connecter").font(.headline)
@@ -93,7 +97,7 @@ struct SSIDRow: View {
 }
 
 struct CenteredProgressView: View {
-    var title: String?
+    var title: String = "Chargement"
     
     var body: some View {
         HStack {

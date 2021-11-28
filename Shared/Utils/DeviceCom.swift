@@ -1,16 +1,18 @@
 import Foundation
 import UIKit
+import Network
+
+enum Method: String {
+    case GET
+    case LIST
+    case POST
+}
 
 class DeviceCom {
-    
-    func isReachable(_ completion: @escaping (Bool) -> Void) {
-        
-    }
-    
-    func query(method: String, _ params: [String: Any]? = nil, _ completion: @escaping (Any?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://192.168.2.1/ap")!)
-        request.httpMethod = method
-        if method == "POST", let params = params {
+    func query(method: Method, _ params: [String: Any]? = nil, _ completion: @escaping (Any?) -> Void) {
+        var request = URLRequest(url: URL(string: "http://192.168.2.1/ssid")!)
+        request.httpMethod = method.rawValue
+        if method == .POST, let params = params {
             let body: String = params.reduce("", { (result, param) in
                 let (key, value) = param
                 return "\(result)\(key)=\(value);"
@@ -37,11 +39,29 @@ class DeviceCom {
                   mimeType == "text/plain",
                   let data = data,
                   let string = String(data: data, encoding: .utf8) else { return }
-            print(string)
-            if method == "LIST" {
-                completion(string.components(separatedBy: "\n"))
-            } else {
+            if method == .GET {
+                print("Found deviceID: \(string)")
                 completion(string)
+            } else if method == .LIST {
+                let ssidList = string.components(separatedBy: "\n")
+                print(ssidList)
+                completion(ssidList)
+            } else {
+                let components = string.components(separatedBy: "\n")
+                guard components.count == 2,
+                      let ip = components.first,
+                      let error = components.last else {
+                          print("Can't parse response")
+                          print(components)
+                          return
+                      }
+                guard let ipv4 = IPv4Address(ip) else {
+                    print("Can't connect to SSID, \(error)")
+                    completion(nil)
+                    return
+                }
+                print(ipv4)
+                completion(ipv4)
             }
         }
         task.resume()

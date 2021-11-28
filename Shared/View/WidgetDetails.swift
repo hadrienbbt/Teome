@@ -22,6 +22,6 @@ struct WidgetDetails: View {
 
 struct WidgetDetails_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetDetails(sensor: .constant(Sensor.sampleHumidity))
+        WidgetDetails(sensor: .constant(SensorType.humidity.sample))
     }
 }

@@ -1,6 +1,7 @@
 import SwiftUI
 import Firebase
 import Combine
+import FirebaseFirestore
 
 typealias Completion<R> = (Error?, R?) -> Void
 
@@ -10,42 +11,47 @@ class SensorViewModel: ObservableObject {
             ValueStore().sensors = sensors
         }
     }
-    @Published var loading = false
+    @Published var loading: String?
     
-    lazy var firestore = Firestore.firestore()
+    var listener: ListenerRegistration?
     
-    func fetchSensors() {
-        loading = true
-        firestore.collection("sensors")
-            .document("13861322")
-            .getDocument { snap, error in
+    func listenSensors() {
+        loading = "Chargement des données du capteur"
+        guard let deviceId = ValueStore().deviceId else {
+            print("❌ Error: No device SSID")
+            return
+        }
+        if let listener = listener {
+            listener.remove()
+        }
+        print("Device ID: \(deviceId)")
+        self.listener = Firestore
+            .firestore()
+            .collection("sensors")
+            .document(deviceId)
+            .addSnapshotListener { snap, error in
                 guard let snap = snap else {
                     print(error?.localizedDescription ?? "Unknown error")
                     return
                 }
-                guard let value = snap.data(),
-                      let humidity = value["humidity"] as? Double,
-                      let temperature = value["temperature"] as? Double,
-                      let illuminance = value["illuminance"] as? Double else { return }
-                
-                print("Humidity: \(humidity)")
-                print("Temperature: \(temperature)")
-                print("Illuminance: \(illuminance)")
-                self.sensors = Sensor.samples
+                if !snap.exists {
+                    self.loading = "En attente de relevés"
+                    return
+                }
+                guard let value = snap.data() else { return }
+                self.sensors = SensorType
+                    .allCases
+                    .map {
+                        var sensor = Sensor(sensorType: $0)
+                        guard let value = value[sensor.id] as? Double else {
+                            print("❌ Error: Can't find value of type \(sensor.id)")
+                            return sensor
+                        }
+                        sensor.value = value
+                        print("\(sensor.title): \(sensor.value)")
+                        return sensor
+                    }
+                self.loading = nil
             }
-    }
-    
-    func receiveSensors(_ sensors: [Sensor]) {
-        self.sensors = sensors
-    }
-    
-    func receiveCompletion(_ completion: Subscribers.Completion<Error>) -> Void {
-        switch completion {
-        case .failure(let error): print("❌ Error fetching backend: \(error)")
-        case .finished:
-           
-            print("✅ Fetching finished with \(self.sensors.count) sensors")
-        }
-        self.loading = false
     }
 }

@@ -19,7 +19,7 @@ struct Widget: View {
                             .font(.body)
                             .foregroundColor(.primary.opacity(0.6))
                             .bold()
-                        Text("\(sensor.value) \(sensor.unit)")
+                        Text("\(sensor.formattedValue) \(sensor.unit)")
                             .font(.title)
                             .foregroundColor(.primary)
                             .bold()
@@ -33,6 +33,6 @@ struct Widget: View {
 
 struct Widget_Previews: PreviewProvider {
     static var previews: some View {
-        Widget(sensor: .constant(Sensor.sampleHumidity), selectedId: .constant(nil))
+        Widget(sensor: .constant(SensorType.humidity.sample), selectedId: .constant(nil))
     }
 }

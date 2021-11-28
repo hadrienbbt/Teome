@@ -1,4 +1,4 @@
-import Foundation
+/*import Foundation
 import NetworkExtension
 import WiFiQRCodeKit
 
@@ -71,3 +71,4 @@ class HotspotConfiguration {
         }
     }
 }
+*/

@@ -1,13 +1,23 @@
 import Foundation
 import SystemConfiguration.CaptiveNetwork
 import Network
+import SwiftUI
 
 class SSIDViewModel: ObservableObject {
     @Published var ssid: String?
-    @Published var loading = false
-    @Published var connecting = false
+    @Published var loading: String?
+    @Published var isError = false
     @Published var locationAllowed = false
-    @Published var deviceCurrentSSID: String?
+    @Published var deviceSSID: String? = ValueStore().deviceSSID {
+        didSet {
+            ValueStore().deviceSSID = deviceSSID
+        }
+    }
+    @Published var deviceIP: Data? = ValueStore().deviceIP {
+        didSet {
+            ValueStore().deviceIP = deviceIP
+        }
+    }
     @Published var deviceReachableSSIDs = [String]()
     
     private let deviceCom = DeviceCom()
@@ -17,6 +27,7 @@ class SSIDViewModel: ObservableObject {
     
     // TODO: Improve this
     var isConnectedToDevice: Bool {
+        // return ssid == deviceSSID
         guard let ssid = ssid else { return false }
         return ssid.contains("Teome")
     }
@@ -38,10 +49,10 @@ class SSIDViewModel: ObservableObject {
         }
     }
     
-    func refreshCurrentSSID() {
-        self.loading = true
+    private func refreshCurrentSSID() {
+        self.loading = "Recherche du point d'accès"
         guard let interfaceNames = CNCopySupportedInterfaces() as? [String] else {
-            loading = false
+            loading = nil
             return
         }
         let ssids: [String] = interfaceNames.compactMap { name in
@@ -53,39 +64,50 @@ class SSIDViewModel: ObservableObject {
         }
         self.ssid = ssids.first
         if isConnectedToDevice {
-            fetchDeviceReachableSSIDs()
+            deviceIP = nil
+            self.getDeviceSSID()
         } else {
-            self.loading = false
+            self.loading = nil
         }
     }
     
-    func setDeviceCurrentSSID(ssid: String, pwd: String) {
-        self.connecting = true
-        deviceCom.query(method: "POST", ["ssid": ssid, "pwd": pwd]) { _ in
+    func getDeviceSSID() {
+        self.loading = "Communication avec l'appareil"
+        deviceCom.query(method: .GET) {
+            guard let sssid = $0 as? String else { return }
             DispatchQueue.main.async {
-                self.connecting = false
+                self.deviceSSID = sssid
+                if self.deviceReachableSSIDs.isEmpty {
+                    self.fetchDeviceReachableSSIDs()
+                } else {
+                    self.loading = nil
+                }
             }
         }
     }
     
     func fetchDeviceReachableSSIDs() {
-        self.loading = true
-        deviceCom.query(method: "LIST") {
+        self.loading = "Recherche des points d'accès"
+        deviceCom.query(method: .LIST) {
             guard let sssids = $0 as? [String] else { return }
             DispatchQueue.main.async {
                 self.deviceReachableSSIDs = sssids.sorted()
-                self.loading = false
+                self.loading = nil
             }
         }
     }
     
-    func fetchDeviceCurrentSSID() {
-        self.loading = true
-        deviceCom.query(method: "GET") { ssid in
+    func setDeviceCurrentSSID(_ ssid: String, _ pwd: String) {
+        self.loading = "Envoi des identifiants WiFi"
+        deviceCom.query(method: .POST, ["ssid": ssid, "pwd": pwd]) { deviceIP in
             DispatchQueue.main.async {
-                self.loading = false
-                guard let sssid = ssid as? String else { return }
-                self.deviceCurrentSSID = sssid
+                guard let deviceIP = deviceIP as? IPv4Address else {
+                    self.isError = true
+                    self.loading = nil
+                    return
+                }
+                self.deviceIP = deviceIP.rawValue
+                self.loading = "Redémarrage de l'appareil"
             }
         }
     }
