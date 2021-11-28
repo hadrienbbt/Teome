@@ -26,6 +26,8 @@
 		4842F5C4274BBE1C002EB954 /* SSIDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5C2274BBE1C002EB954 /* SSIDViewModel.swift */; };
 		4842F5C6274ED32B002EB954 /* SSIDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5C5274ED32A002EB954 /* SSIDList.swift */; };
 		4842F5C7274ED32B002EB954 /* SSIDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5C5274ED32A002EB954 /* SSIDList.swift */; };
+		48559E8D2751CDB7007A57F4 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48559E8C2751CDB7007A57F4 /* Main.swift */; };
+		48559E8E2751CDB7007A57F4 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48559E8C2751CDB7007A57F4 /* Main.swift */; };
 		487E9B1C2749E7ED00049C76 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 487E9B1B2749E7ED00049C76 /* CodeScanner */; };
 		488789AE274976BD00241835 /* WidgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789AD274976BD00241835 /* WidgetDetails.swift */; };
 		488789AF274976BD00241835 /* WidgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789AD274976BD00241835 /* WidgetDetails.swift */; };
@@ -68,6 +70,7 @@
 		4842F5BC274BB789002EB954 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
 		4842F5C2274BBE1C002EB954 /* SSIDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSIDViewModel.swift; sourceTree = "<group>"; };
 		4842F5C5274ED32A002EB954 /* SSIDList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSIDList.swift; sourceTree = "<group>"; };
+		48559E8C2751CDB7007A57F4 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		488789AD274976BD00241835 /* WidgetDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDetails.swift; sourceTree = "<group>"; };
 		488789B52749A20B00241835 /* TeomeQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeomeQRCode.swift; sourceTree = "<group>"; };
 		48B539AE274509D5009A26B0 /* TeomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeomeApp.swift; sourceTree = "<group>"; };
@@ -193,6 +196,7 @@
 				4842F5BC274BB789002EB954 /* BackgroundGradient.swift */,
 				4842F5B9274BADF6002EB954 /* PairDevice.swift */,
 				4842F5C5274ED32A002EB954 /* SSIDList.swift */,
+				48559E8C2751CDB7007A57F4 /* Main.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -426,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48559E8D2751CDB7007A57F4 /* Main.swift in Sources */,
 				4842F5C3274BBE1C002EB954 /* SSIDViewModel.swift in Sources */,
 				4834AC02274AD7C90035DC6E /* LocationPermissionAsker.swift in Sources */,
 				488789AE274976BD00241835 /* WidgetDetails.swift in Sources */,
@@ -450,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48559E8E2751CDB7007A57F4 /* Main.swift in Sources */,
 				4842F5C4274BBE1C002EB954 /* SSIDViewModel.swift in Sources */,
 				4834AC03274AD7C90035DC6E /* LocationPermissionAsker.swift in Sources */,
 				488789AF274976BD00241835 /* WidgetDetails.swift in Sources */,
