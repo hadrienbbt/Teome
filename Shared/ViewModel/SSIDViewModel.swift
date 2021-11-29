@@ -7,7 +7,6 @@ class SSIDViewModel: ObservableObject {
     @Published var ssid: String?
     @Published var loading: String?
     @Published var isError = false
-    @Published var locationAllowed = false
     @Published var deviceSSID: String? = ValueStore().deviceSSID {
         didSet {
             ValueStore().deviceSSID = deviceSSID
@@ -33,20 +32,12 @@ class SSIDViewModel: ObservableObject {
     }
     
     init() {
-        LocationPermissionAsker().askIfNeeded { status in
-            let allowed = status == .authorizedAlways || status == .authorizedWhenInUse
-            self.locationAllowed = allowed
-            self.monitor.pathUpdateHandler = { _ in
-                DispatchQueue.main.async {
-                    self.refreshCurrentSSID()
-                }
-            }
-            self.monitor.start(queue: self.queue)
-            
-            if !allowed {
-                print("Please allow location")
+        self.monitor.pathUpdateHandler = { _ in
+            DispatchQueue.main.async {
+                self.refreshCurrentSSID()
             }
         }
+        self.monitor.start(queue: self.queue)
     }
     
     private func refreshCurrentSSID() {
