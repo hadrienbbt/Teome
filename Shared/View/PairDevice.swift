@@ -32,7 +32,7 @@ struct PairDevice: View {
                         .multilineTextAlignment(.center)
                         .padding(.top)
                     NetworkStatus(ssid: $ssidViewModel.ssid)
-                    if ssidViewModel.isConnectedToDevice, let loading = ssidViewModel.loading {
+                    if let loading = ssidViewModel.loading {
                         CenteredProgressView(title: loading)
                     } else if let loading = sensorViewModel.loading {
                         CenteredProgressView(title: loading)

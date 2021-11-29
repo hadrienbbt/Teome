@@ -8,7 +8,7 @@ struct Sensor: Identifiable, Decodable, Encodable {
     let unit: String
     
     var formattedValue: String {
-        return String(Double(round(10 * value) / 10))
+        return String(format: "%.0f", round(value))
     }
     
     init(sensorType: SensorType, _ value: Double = 0) {

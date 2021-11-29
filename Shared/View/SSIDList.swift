@@ -61,27 +61,25 @@ struct SSIDRow: View {
     @Binding var isSelected: Bool
     
     @State var passwordVisible = false
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             if isSelected {
                 Divider()
             }
             Button(ssid, action: {
-                if loading == nil {
-                    isSelected.toggle()
-                }
-            })
+                isSelected.toggle()
+            }).disabled(loading != nil)
             if isSelected {
                 HStack {
-                    if passwordVisible {
+                    if passwordVisible, loading == nil {
                         TextField("Mot de passe WiFi", text: $password)
                     } else {
                         SecureField("Mot de passe WiFi", text: $password)
                     }
                     Button(action: { self.passwordVisible.toggle() }) {
                         Image(systemName: self.passwordVisible ? "eye.slash" : "eye")
-                    }
+                    }.disabled(loading != nil)
                 }
                 if let loading = loading {
                     CenteredProgressView(title: loading)

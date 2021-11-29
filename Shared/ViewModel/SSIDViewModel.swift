@@ -2,6 +2,8 @@ import Foundation
 import SystemConfiguration.CaptiveNetwork
 import Network
 import SwiftUI
+import Firebase
+import FirebaseFirestore
 
 class SSIDViewModel: ObservableObject {
     @Published var ssid: String?
@@ -101,5 +103,24 @@ class SSIDViewModel: ObservableObject {
                 self.loading = "Redémarrage de l'appareil"
             }
         }
+    }
+    
+    func unpairDevice(deviceId: String) {
+        self.loading = "Dissociation en cours"
+        Firestore
+            .firestore()
+            .collection("sensors")
+            .document(deviceId)
+            .delete { error in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                self.loading = "Appuyez sur le bouton RESET"
+                // Stub
+                Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
+                    self.deviceIP = nil
+                }
+            }
     }
 }

@@ -4,6 +4,7 @@ struct SensorList: View {
     @ObservedObject var ssidViewModel: SSIDViewModel
     @ObservedObject var sensorViewModel: SensorViewModel
     @State private var selectedId: String?
+    @State private var deviceId: String? = ValueStore().deviceId
     
     let columns = [
         GridItem(.adaptive(minimum: 140), spacing: 20)
@@ -21,12 +22,15 @@ struct SensorList: View {
         .padding(.horizontal)
         .withBackgoundGradient(alignment: .leading)
         .navigationBarTitle("Sensors")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Unpair", action: {
-                    ssidViewModel.deviceIP = nil
-                    sensorViewModel.sensors = []
-                })
+        .if(deviceId != nil) { view in
+            view.toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Unpair", action: {
+                        self.sensorViewModel.listener?.remove()
+                        self.sensorViewModel.sensors.removeAll()
+                        self.ssidViewModel.unpairDevice(deviceId: deviceId!)
+                    }).foregroundColor(.white)
+                }
             }
         }
         .onAppear(perform: sensorViewModel.listenSensors)

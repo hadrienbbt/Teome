@@ -17,7 +17,12 @@ struct Main: App {
             if locationViewModel.allowed {
                 TeomeApp()
             } else {
-                Text("Please allow location")
+                Text("Autorisez la localisation dans les réglages")
+                    .padding(.bottom)
+                Button("Ouvrir Réglages", action: {
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+
+                })
             }
         }
     }

@@ -189,15 +189,15 @@
 		48B539D42746E772009A26B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				48559E8C2751CDB7007A57F4 /* Main.swift */,
 				48B539AE274509D5009A26B0 /* TeomeApp.swift */,
+				4842F5B9274BADF6002EB954 /* PairDevice.swift */,
+				4842F5C5274ED32A002EB954 /* SSIDList.swift */,
 				48B539AF274509D5009A26B0 /* SensorList.swift */,
 				48B539D52746E790009A26B0 /* Widget.swift */,
 				488789AD274976BD00241835 /* WidgetDetails.swift */,
 				488789B52749A20B00241835 /* TeomeQRCode.swift */,
 				4842F5BC274BB789002EB954 /* BackgroundGradient.swift */,
-				4842F5B9274BADF6002EB954 /* PairDevice.swift */,
-				4842F5C5274ED32A002EB954 /* SSIDList.swift */,
-				48559E8C2751CDB7007A57F4 /* Main.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
