@@ -5,9 +5,19 @@ import SwiftUI
 import Firebase
 import FirebaseFirestore
 
+enum SSIDLoadingState: String {
+    case refreshCurrentSSID = "Recherche du point d'accès"
+    case getDeviceSSID = "Communication avec l'appareil"
+    case fetchDeviceReachableSSIDs = "Recherche des points d'accès"
+    case setDeviceCurrentSSID = "Envoi des identifiants WiFi"
+    case unpairDevice = "Dissociation en cours"
+    case pressReseet = "Appuyez sur le bouton RESET"
+    case rebootingDevice = "Redémarrage de l'appareil"
+}
+
 class SSIDViewModel: ObservableObject {
     @Published var ssid: String?
-    @Published var loading: String?
+    @Published var loading: SSIDLoadingState?
     @Published var isError = false
     @Published var deviceSSID: String? = ValueStore().deviceSSID {
         didSet {
@@ -43,7 +53,7 @@ class SSIDViewModel: ObservableObject {
     }
     
     private func refreshCurrentSSID() {
-        self.loading = "Recherche du point d'accès"
+        self.loading = SSIDLoadingState.refreshCurrentSSID
         guard let interfaceNames = CNCopySupportedInterfaces() as? [String] else {
             loading = nil
             return
@@ -65,7 +75,7 @@ class SSIDViewModel: ObservableObject {
     }
     
     func getDeviceSSID() {
-        self.loading = "Communication avec l'appareil"
+        self.loading = SSIDLoadingState.getDeviceSSID
         deviceCom.query(method: .GET) {
             guard let sssid = $0 as? String else { return }
             DispatchQueue.main.async {
@@ -80,7 +90,7 @@ class SSIDViewModel: ObservableObject {
     }
     
     func fetchDeviceReachableSSIDs() {
-        self.loading = "Recherche des points d'accès"
+        self.loading = SSIDLoadingState.fetchDeviceReachableSSIDs
         deviceCom.query(method: .LIST) {
             guard let sssids = $0 as? [String] else { return }
             DispatchQueue.main.async {
@@ -91,7 +101,7 @@ class SSIDViewModel: ObservableObject {
     }
     
     func setDeviceCurrentSSID(_ ssid: String, _ pwd: String) {
-        self.loading = "Envoi des identifiants WiFi"
+        self.loading = SSIDLoadingState.setDeviceCurrentSSID
         deviceCom.query(method: .POST, ["ssid": ssid, "pwd": pwd]) { deviceIP in
             DispatchQueue.main.async {
                 guard let deviceIP = deviceIP as? IPv4Address else {
@@ -100,13 +110,13 @@ class SSIDViewModel: ObservableObject {
                     return
                 }
                 self.deviceIP = deviceIP.rawValue
-                self.loading = "Redémarrage de l'appareil"
+                self.loading = SSIDLoadingState.rebootingDevice
             }
         }
     }
     
     func unpairDevice(deviceId: String) {
-        self.loading = "Dissociation en cours"
+        self.loading = SSIDLoadingState.unpairDevice
         Firestore
             .firestore()
             .collection("sensors")
@@ -116,7 +126,7 @@ class SSIDViewModel: ObservableObject {
                     print(error)
                     return
                 }
-                self.loading = "Appuyez sur le bouton RESET"
+                self.loading = SSIDLoadingState.pressReseet
                 // Stub
                 Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
                     self.deviceIP = nil

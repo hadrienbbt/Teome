@@ -33,9 +33,9 @@ struct PairDevice: View {
                         .padding(.top)
                     NetworkStatus(ssid: $ssidViewModel.ssid)
                     if let loading = ssidViewModel.loading {
-                        CenteredProgressView(title: loading)
+                        CenteredProgressView(title: loading.rawValue)
                     } else if let loading = sensorViewModel.loading {
-                        CenteredProgressView(title: loading)
+                        CenteredProgressView(title: loading.rawValue)
                     } else if ssidViewModel.ssid != nil {
                         CenteredProgressView().onAppear(perform: sensorViewModel.listenSensors)
                     } else {

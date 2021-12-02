@@ -28,7 +28,7 @@ struct SSIDList: View {
                             isSelected: isSelected(ssid)
                     ).padding(.vertical)
                 } else {
-                    CenteredProgressView(title: loading)
+                    CenteredProgressView(title: loading.rawValue)
                 }
             } else {
                 if viewModel.deviceReachableSSIDs.isEmpty {
@@ -55,7 +55,7 @@ struct SSIDList: View {
 struct SSIDRow: View {
     let ssid: String
     let connect: () -> Void
-    let loading: String?
+    let loading: SSIDLoadingState?
     
     @Binding var password: String
     @Binding var isSelected: Bool
@@ -82,7 +82,7 @@ struct SSIDRow: View {
                     }.disabled(loading != nil)
                 }
                 if let loading = loading {
-                    CenteredProgressView(title: loading)
+                    CenteredProgressView(title: loading.rawValue)
                 } else {
                     Button(action: { self.connect() }) {
                         Text("Connecter").font(.headline)

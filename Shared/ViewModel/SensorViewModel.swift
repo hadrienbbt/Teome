@@ -5,18 +5,23 @@ import FirebaseFirestore
 
 typealias Completion<R> = (Error?, R?) -> Void
 
+enum SensorLoadingState: String {
+    case listenSensors = "Chargement des données du capteur"
+    case receivingData = "En attente de relevés"
+}
+
 class SensorViewModel: ObservableObject {
     @Published var sensors = ValueStore().sensors {
         didSet {
             ValueStore().sensors = sensors
         }
     }
-    @Published var loading: String?
+    @Published var loading: SensorLoadingState?
     
     var listener: ListenerRegistration?
     
     func listenSensors() {
-        loading = "Chargement des données du capteur"
+        loading = SensorLoadingState.listenSensors
         guard let deviceId = ValueStore().deviceId else {
             print("❌ Error: No device SSID")
             return
@@ -35,7 +40,7 @@ class SensorViewModel: ObservableObject {
                     return
                 }
                 if !snap.exists {
-                    self.loading = "En attente de relevés"
+                    self.loading = SensorLoadingState.receivingData
                     return
                 }
                 guard let value = snap.data() else { return }
