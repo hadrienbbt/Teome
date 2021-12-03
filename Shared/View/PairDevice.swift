@@ -23,7 +23,6 @@ struct PairDevice: View {
                     }
                     NetworkStatus(ssid: $ssidViewModel.ssid)
                     if ssidViewModel.isConnectedToDevice {
-                        Divider().padding(.bottom)
                         SSIDList(viewModel: ssidViewModel)
                     }
                 } else {

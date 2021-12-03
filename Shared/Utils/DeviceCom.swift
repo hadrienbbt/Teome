@@ -43,9 +43,12 @@ class DeviceCom {
                 print("Found deviceID: \(string)")
                 completion(string)
             } else if method == .LIST {
-                let ssidList = string.components(separatedBy: "\n")
-                print(ssidList)
-                completion(ssidList)
+                let reachableSSIDS = string
+                    .components(separatedBy: "\n")
+                    .sorted()
+                    .filter { $0 != "" }
+                print(reachableSSIDS)
+                completion(reachableSSIDS)
             } else {
                 let components = string.components(separatedBy: "\n")
                 guard components.count == 2,

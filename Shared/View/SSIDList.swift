@@ -15,10 +15,14 @@ struct SSIDList: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Text("Veuillez sélectionner votre réseau WiFi")
-                    .font(.headline)
-                Spacer()
+            if viewModel.loading != .setDeviceCurrentSSID {
+                Divider().padding(.bottom)
+                HStack {
+                    Text("Veuillez sélectionner votre réseau WiFi")
+                        .font(.headline)
+                    Spacer()
+                }
+                .padding(.bottom)
             }
             if let loading = viewModel.loading {
                 if let ssid = selected {

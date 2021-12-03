@@ -94,7 +94,7 @@ class SSIDViewModel: ObservableObject {
         deviceCom.query(method: .LIST) {
             guard let sssids = $0 as? [String] else { return }
             DispatchQueue.main.async {
-                self.deviceReachableSSIDs = sssids.sorted()
+                self.deviceReachableSSIDs = sssids
                 self.loading = nil
             }
         }
