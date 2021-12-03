@@ -27,6 +27,10 @@ struct Sensor: Identifiable, Decodable, Encodable {
             self.image = "sun"
             self.title = "Luminosité"
             self.unit = "lux"
+        case .pressure:
+            self.image = "pressure"
+            self.title = "Pression athmosphéerique"
+            self.unit = "mbar"
         }
     }
 }
@@ -35,6 +39,7 @@ enum SensorType: String, CaseIterable {
     case humidity
     case temperature
     case illuminance
+    case pressure
     
     static var samples: [Sensor] = SensorType.allCases.map { $0.sample }
     
@@ -47,6 +52,8 @@ enum SensorType: String, CaseIterable {
             sensor.value = 34
         case .illuminance:
             sensor.value = 300
+        case .pressure:
+            sensor.value = 1000
         }
         return sensor
     }
