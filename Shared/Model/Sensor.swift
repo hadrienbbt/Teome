@@ -29,7 +29,7 @@ struct Sensor: Identifiable, Decodable, Encodable {
             self.unit = "lux"
         case .pressure:
             self.image = "pressure"
-            self.title = "Pression athmosphéerique"
+            self.title = "Pression"
             self.unit = "mbar"
         }
     }

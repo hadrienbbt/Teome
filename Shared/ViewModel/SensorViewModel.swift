@@ -16,6 +16,11 @@ class SensorViewModel: ObservableObject {
             ValueStore().sensors = sensors
         }
     }
+    @Published var updatedAt = ValueStore().updatedAt {
+        didSet {
+            ValueStore().updatedAt = updatedAt
+        }
+    }
     @Published var loading: SensorLoadingState?
     
     var listener: ListenerRegistration?
@@ -43,12 +48,15 @@ class SensorViewModel: ObservableObject {
                     self.loading = SensorLoadingState.receivingData
                     return
                 }
-                guard let value = snap.data() else { return }
+                guard let dict = snap.data(),
+                      let updatedAt = dict["updatedAt"] as? Timestamp
+                else { return }
+                self.updatedAt = updatedAt.dateValue()
                 self.sensors = SensorType
                     .allCases
                     .map {
                         var sensor = Sensor(sensorType: $0)
-                        guard let value = value[sensor.id] as? Double else {
+                        guard let value = dict[sensor.id] as? Double else {
                             print("❌ Error: Can't find value of type \(sensor.id)")
                             return sensor
                         }

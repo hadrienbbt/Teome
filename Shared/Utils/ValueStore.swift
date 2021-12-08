@@ -20,6 +20,11 @@ class ValueStore {
         set { write("deviceIP", newValue) }
     }
     
+    var updatedAt: Date? {
+        get { return read("updatedAt") as? Date }
+        set { write("updatedAt", newValue) }
+    }
+    
     var sensors: [Sensor] {
         get {
             if let data = read("sensors") as? Data,
