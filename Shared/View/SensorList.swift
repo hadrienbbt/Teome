@@ -11,14 +11,14 @@ struct SensorList: View {
     ]
     
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(alignment: .leading, spacing: 10) {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach($sensorViewModel.sensors) {
                     Widget(sensor: $0, selectedId: $selectedId)
                 }
             }
             if let updatedAt = sensorViewModel.updatedAt {
-                Text(updatedAt.description).foregroundColor(.white)
+                Text(updatedAt.timeAgo).foregroundColor(.white)
             }
             Spacer()
         }

@@ -28,10 +28,10 @@
 		4842F5C7274ED32B002EB954 /* SSIDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4842F5C5274ED32A002EB954 /* SSIDList.swift */; };
 		48559E8D2751CDB7007A57F4 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48559E8C2751CDB7007A57F4 /* Main.swift */; };
 		48559E8E2751CDB7007A57F4 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48559E8C2751CDB7007A57F4 /* Main.swift */; };
+		4874CB23276FF7BE001CD441 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 4874CB22276FF7BE001CD441 /* QRCode */; };
 		487E9B1C2749E7ED00049C76 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 487E9B1B2749E7ED00049C76 /* CodeScanner */; };
 		488789AE274976BD00241835 /* WidgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789AD274976BD00241835 /* WidgetDetails.swift */; };
 		488789AF274976BD00241835 /* WidgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789AD274976BD00241835 /* WidgetDetails.swift */; };
-		488789B227499F6C00241835 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 488789B127499F6C00241835 /* QRCode */; };
 		488789B427499F8800241835 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 488789B327499F8800241835 /* QRCode */; };
 		488789B62749A20B00241835 /* TeomeQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789B52749A20B00241835 /* TeomeQRCode.swift */; };
 		488789B72749A20B00241835 /* TeomeQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789B52749A20B00241835 /* TeomeQRCode.swift */; };
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				488789B227499F6C00241835 /* QRCode in Frameworks */,
+				4874CB23276FF7BE001CD441 /* QRCode in Frameworks */,
 				4834ABF7274A89380035DC6E /* NetworkExtension.framework in Frameworks */,
 				371848A193F54354551BEECB /* Pods_Teome__iOS_.framework in Frameworks */,
 				487E9B1C2749E7ED00049C76 /* CodeScanner in Frameworks */,
@@ -251,9 +251,9 @@
 			);
 			name = "Teome (iOS)";
 			packageProductDependencies = (
-				488789B127499F6C00241835 /* QRCode */,
 				487E9B1B2749E7ED00049C76 /* CodeScanner */,
 				4834ABFC274A8F4D0035DC6E /* Swifter */,
+				4874CB22276FF7BE001CD441 /* QRCode */,
 			);
 			productName = "Teome (iOS)";
 			productReference = 48B539B5274509DE009A26B0 /* Teome.app */;
@@ -289,7 +289,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					48B539B4274509DE009A26B0 = {
 						CreatedOnToolsVersion = 13.1;
@@ -670,6 +670,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -699,6 +700,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -786,15 +788,15 @@
 			package = 4834ABFB274A8F4D0035DC6E /* XCRemoteSwiftPackageReference "swifter" */;
 			productName = Swifter;
 		};
+		4874CB22276FF7BE001CD441 /* QRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */;
+			productName = QRCode;
+		};
 		487E9B1B2749E7ED00049C76 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 487E9B1A2749E7ED00049C76 /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
-		};
-		488789B127499F6C00241835 /* QRCode */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */;
-			productName = QRCode;
 		};
 		488789B327499F8800241835 /* QRCode */ = {
 			isa = XCSwiftPackageProductDependency;
