@@ -62,7 +62,7 @@ struct SensorList: View {
                 .background(.ultraThinMaterial)
             }
         }
-        .animation(.spring(), value: selected?.id)
+        .animation(.easeInOut(duration: 0.3), value: selected?.id)
         .onAppear(perform: sensorViewModel.listenSensors)
     }
 }

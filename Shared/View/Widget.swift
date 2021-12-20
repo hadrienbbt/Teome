@@ -6,10 +6,14 @@ struct Widget: View {
     
     @Namespace private var widgetEffect
     
+    var imageSize: CGFloat {
+        return isSelected ? 50 : 40
+    }
+    
     var image: some View {
         Image(sensor.image)
             .resizable()
-            .frame(width: 40, height: 40)
+            .frame(width: imageSize, height: imageSize)
             .padding([.vertical, .trailing], 5)
     }
     
@@ -31,8 +35,7 @@ struct Widget: View {
         Image(systemName: "xmark.circle.fill")
             .resizable()
             .frame(width: 30, height: 30)
-            .padding()
-            .foregroundColor(.tertiaryLabel)
+            .foregroundStyle(Color.secondary, Color.tertiarySystemBackground)
             .onTapGesture { isSelected = false }
     }
     
@@ -42,7 +45,7 @@ struct Widget: View {
                 .foregroundColor(.secondarySystemBackground)
             if isSelected {
                 VStack {
-                    HStack {
+                    HStack(alignment: .top) {
                         image
                         VStack(alignment: .leading) {
                             title
