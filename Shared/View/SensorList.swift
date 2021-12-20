@@ -3,38 +3,66 @@ import SwiftUI
 struct SensorList: View {
     @ObservedObject var ssidViewModel: SSIDViewModel
     @ObservedObject var sensorViewModel: SensorViewModel
-    @State private var selectedId: String?
+    @State private var selected: Sensor?
     @State private var deviceId: String? = ValueStore().deviceId
+    @Namespace private var widgetEffect
     
     let columns = [
         GridItem(.adaptive(minimum: 140), spacing: 20)
     ]
     
+    func isSelected(_ sensor: Sensor) -> Binding<Bool> {
+        return Binding(
+            get: { sensor.id == selected?.id },
+            set: { selected = $0 ? sensor : nil }
+        )
+    }
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach($sensorViewModel.sensors) {
-                    Widget(sensor: $0, selectedId: $selectedId)
+        ZStack {
+            NavigationView {
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach($sensorViewModel.sensors) { sensor in
+                            Widget(sensor: sensor, isSelected: isSelected(sensor.wrappedValue))
+                                .matchedGeometryEffect(id: sensor.id, in: widgetEffect)
+                                .onTapGesture { selected = sensor.wrappedValue }
+                        }
+                    }
+                    .padding()
+                }
+                .navigationBarTitle("Capteurs")
+                .if(deviceId != nil) { view in
+                    view.toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button("Dissocier", action: {
+                                self.sensorViewModel.listener?.remove()
+                                self.sensorViewModel.sensors.removeAll()
+                                self.ssidViewModel.unpairDevice(deviceId: deviceId!)
+                            })
+                        }
+                    }
+                }
+                if let updatedAt = sensorViewModel.updatedAt {
+                    Text(updatedAt.timeAgo)
                 }
             }
-            if let updatedAt = sensorViewModel.updatedAt {
-                Text(updatedAt.timeAgo)
-            }
-            Spacer()
-        }
-        .padding(.horizontal)
-        .navigationBarTitle("Capteurs")
-        .if(deviceId != nil) { view in
-            view.toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Dissocier", action: {
-                        self.sensorViewModel.listener?.remove()
-                        self.sensorViewModel.sensors.removeAll()
-                        self.ssidViewModel.unpairDevice(deviceId: deviceId!)
-                    })
+            if let selected = selected {
+                ScrollView {
+                    Widget(sensor: .constant(selected), isSelected: isSelected(selected))
+                        .matchedGeometryEffect(id: selected.id, in: widgetEffect)
+                        .frame(maxWidth: 400)
+                        .padding(30)
+                        .onTapGesture { }
+                    Text("Some text content")
+                    Spacer()
                 }
+                .onTapGesture { self.selected = nil }
+                .frame(maxWidth: .infinity)
+                .background(.ultraThinMaterial)
             }
         }
+        .animation(.spring(), value: selected?.id)
         .onAppear(perform: sensorViewModel.listenSensors)
     }
 }

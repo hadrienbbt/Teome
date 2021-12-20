@@ -5,10 +5,10 @@ struct TeomeApp: View {
     @ObservedObject var sensorViewModel = SensorViewModel()
     
     var body: some View {
-        NavigationView {
-            if ssidViewModel.deviceIP != nil, !sensorViewModel.sensors.isEmpty {
-                SensorList(ssidViewModel: ssidViewModel, sensorViewModel: sensorViewModel)
-            } else {
+        if ssidViewModel.deviceIP != nil, !sensorViewModel.sensors.isEmpty {
+            SensorList(ssidViewModel: ssidViewModel, sensorViewModel: sensorViewModel)
+        } else {
+            NavigationView {
                 PairDevice(ssidViewModel: ssidViewModel, sensorViewModel: sensorViewModel)
             }
         }
