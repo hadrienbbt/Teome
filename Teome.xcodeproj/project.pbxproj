@@ -54,6 +54,10 @@
 		48B539E12746E973009A26B0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539DF2746E973009A26B0 /* extensions.swift */; };
 		48B539E32746F795009A26B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48B539E22746F794009A26B0 /* GoogleService-Info.plist */; };
 		48B539E42746F795009A26B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48B539E22746F794009A26B0 /* GoogleService-Info.plist */; };
+		48C52FAB2770B16C00C3F088 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C52FAA2770B16C00C3F088 /* SampleViewModel.swift */; };
+		48C52FAC2770B16C00C3F088 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C52FAA2770B16C00C3F088 /* SampleViewModel.swift */; };
+		48C52FAE2770E23300C3F088 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C52FAD2770E23300C3F088 /* Sample.swift */; };
+		48C52FAF2770E23300C3F088 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C52FAD2770E23300C3F088 /* Sample.swift */; };
 		865FE617120E2374131BED1B /* Pods_Teome__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFD5E978F7DDECC3EA3D8D6 /* Pods_Teome__macOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +90,8 @@
 		48B539DB2746E899009A26B0 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		48B539DF2746E973009A26B0 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		48B539E22746F794009A26B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48C52FAA2770B16C00C3F088 /* SampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
+		48C52FAD2770E23300C3F088 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		B5BFFB389619325E428A67A1 /* Pods-Teome (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teome (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Teome (macOS)/Pods-Teome (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		DCFD5E978F7DDECC3EA3D8D6 /* Pods_Teome__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teome__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B658EAD2E8018CEC98B268 /* Pods-Teome (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teome (iOS).release.xcconfig"; path = "Target Support Files/Pods-Teome (iOS)/Pods-Teome (iOS).release.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +182,7 @@
 				48B539D82746E861009A26B0 /* SensorViewModel.swift */,
 				4842F5C2274BBE1C002EB954 /* SSIDViewModel.swift */,
 				4834AC01274AD7C90035DC6E /* LocationViewModel.swift */,
+				48C52FAA2770B16C00C3F088 /* SampleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				48B539DB2746E899009A26B0 /* Sensor.swift */,
+				48C52FAD2770E23300C3F088 /* Sample.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -439,6 +447,8 @@
 				4834AC02274AD7C90035DC6E /* LocationViewModel.swift in Sources */,
 				488789AE274976BD00241835 /* WidgetDetails.swift in Sources */,
 				48B539D92746E861009A26B0 /* SensorViewModel.swift in Sources */,
+				48C52FAE2770E23300C3F088 /* Sample.swift in Sources */,
+				48C52FAB2770B16C00C3F088 /* SampleViewModel.swift in Sources */,
 				48B539DC2746E899009A26B0 /* Sensor.swift in Sources */,
 				48B539C0274509DE009A26B0 /* SensorList.swift in Sources */,
 				4834ABF9274A89DE0035DC6E /* HotspotConfiguration.swift in Sources */,
@@ -464,6 +474,8 @@
 				4834AC03274AD7C90035DC6E /* LocationViewModel.swift in Sources */,
 				488789AF274976BD00241835 /* WidgetDetails.swift in Sources */,
 				48B539DA2746E861009A26B0 /* SensorViewModel.swift in Sources */,
+				48C52FAF2770E23300C3F088 /* Sample.swift in Sources */,
+				48C52FAC2770B16C00C3F088 /* SampleViewModel.swift in Sources */,
 				48B539DD2746E899009A26B0 /* Sensor.swift in Sources */,
 				48B539C1274509DE009A26B0 /* SensorList.swift in Sources */,
 				4834ABFA274A89DE0035DC6E /* HotspotConfiguration.swift in Sources */,
