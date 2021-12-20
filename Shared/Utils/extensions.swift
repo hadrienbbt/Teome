@@ -37,19 +37,19 @@ extension Date {
 
         if minuteAgo < self {
             // let diff = Calendar.current.dateComponents([.second], from: self, to: Date()).second ?? 0
-            return "à l'instant"
+            return "À l'instant"
         } else if hourAgo < self {
             let diff = Calendar.current.dateComponents([.minute], from: self, to: Date()).minute ?? 0
-            return "il y a \(diff) min"
+            return "Il y a \(diff) min"
         } else if dayAgo < self {
             let diff = Calendar.current.dateComponents([.hour], from: self, to: Date()).hour ?? 0
-            return "il y a \(diff) h"
+            return "Il y a \(diff) h"
         } else if weekAgo < self {
             let diff = Calendar.current.dateComponents([.day], from: self, to: Date()).day ?? 0
-            return "il y a \(diff) jours"
+            return "Il y a \(diff) jours"
         }
         let diff = Calendar.current.dateComponents([.weekOfYear], from: self, to: Date()).weekOfYear ?? 0
-        return "\(diff) weeks ago"
+        return "Il y a \(diff) semaines"
     }
 }
 
