@@ -1,10 +1,3 @@
-//
-//  WidgetDetails.swift
-//  Teome
-//
-//  Created by Hadrien Barbat on 20/11/2021.
-//
-
 import SwiftUI
 
 struct WidgetDetails: View {
@@ -13,10 +6,7 @@ struct WidgetDetails: View {
     var body: some View {
         VStack {
 
-        }
-        .foregroundColor(.white)
-        .withBackgoundGradient()
-        
+        }        
     }
 }
 

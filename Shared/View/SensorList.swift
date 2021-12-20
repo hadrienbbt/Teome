@@ -18,12 +18,11 @@ struct SensorList: View {
                 }
             }
             if let updatedAt = sensorViewModel.updatedAt {
-                Text(updatedAt.timeAgo).foregroundColor(.white)
+                Text(updatedAt.timeAgo)
             }
             Spacer()
         }
         .padding(.horizontal)
-        .withBackgoundGradient(alignment: .leading)
         .navigationBarTitle("Sensors")
         .if(deviceId != nil) { view in
             view.toolbar {
@@ -32,7 +31,7 @@ struct SensorList: View {
                         self.sensorViewModel.listener?.remove()
                         self.sensorViewModel.sensors.removeAll()
                         self.ssidViewModel.unpairDevice(deviceId: deviceId!)
-                    }).foregroundColor(.white)
+                    })
                 }
             }
         }
