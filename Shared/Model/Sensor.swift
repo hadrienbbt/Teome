@@ -31,6 +31,10 @@ struct Sensor: Identifiable, Decodable, Encodable {
             self.image = "pressure"
             self.title = "Pression"
             self.unit = "mbar"
+        case .soil:
+            self.image = "plant"
+            self.title = "Plante"
+            self.unit = "%"
         }
     }
 }
@@ -38,6 +42,7 @@ struct Sensor: Identifiable, Decodable, Encodable {
 enum SensorType: String, CaseIterable {
     case humidity
     case temperature
+    case soil
     case illuminance
     case pressure
     
@@ -54,6 +59,8 @@ enum SensorType: String, CaseIterable {
             sensor.value = 300
         case .pressure:
             sensor.value = 1000
+        case .soil:
+            sensor.value = 80
         }
         return sensor
     }
