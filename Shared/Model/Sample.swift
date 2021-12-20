@@ -1,6 +1,5 @@
 import Foundation
 import Firebase
-import SwiftUICharts
 
 struct Sample: Identifiable, Decodable, Encodable {
     var id: String

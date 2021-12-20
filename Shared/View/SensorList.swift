@@ -3,8 +3,10 @@ import SwiftUI
 struct SensorList: View {
     @ObservedObject var ssidViewModel: SSIDViewModel
     @ObservedObject var sensorViewModel: SensorViewModel
+
     @State private var selected: Sensor?
     @State private var deviceId: String? = ValueStore().deviceId
+    
     @Namespace private var widgetEffect
     
     let columns = [
@@ -30,6 +32,9 @@ struct SensorList: View {
                         }
                     }
                     .padding()
+                    if let updatedAt = sensorViewModel.updatedAt {
+                        Text(updatedAt.timeAgo)
+                    }
                 }
                 .navigationBarTitle("Capteurs")
                 .if(deviceId != nil) { view in
@@ -42,9 +47,6 @@ struct SensorList: View {
                             })
                         }
                     }
-                }
-                if let updatedAt = sensorViewModel.updatedAt {
-                    Text(updatedAt.timeAgo)
                 }
             }
             if let selected = selected {
@@ -63,7 +65,9 @@ struct SensorList: View {
             }
         }
         .animation(.easeInOut(duration: 0.3), value: selected?.id)
-        .onAppear(perform: sensorViewModel.listenSensors)
+        .onAppear {
+            sensorViewModel.listenSensors()
+        }
     }
 }
 

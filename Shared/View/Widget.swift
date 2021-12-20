@@ -1,10 +1,15 @@
 import SwiftUI
+import SwiftUICharts
 
 struct Widget: View {
     @Binding var sensor: Sensor
     @Binding var isSelected: Bool
     
     @Namespace private var widgetEffect
+    
+    var sampleViewModel: SampleViewModel {
+        return SampleViewModel(samples: sensor.samples)
+    }
     
     var imageSize: CGFloat {
         return isSelected ? 50 : 40
@@ -54,7 +59,8 @@ struct Widget: View {
                         Spacer()
                         close
                     }.padding()
-                    Text("Chart").frame(height: 400)
+                    LineChart(chartData: sampleViewModel.chartData)
+                            .frame(height: 400)
                 }
             } else {
                 VStack(alignment: .leading) {

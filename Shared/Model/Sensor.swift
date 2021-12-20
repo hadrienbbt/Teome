@@ -6,14 +6,16 @@ struct Sensor: Identifiable, Decodable, Encodable {
     let title: String
     var value: Double
     let unit: String
+    var samples: [Sample]
     
     var formattedValue: String {
         return String(format: "%.0f", round(value))
     }
     
-    init(sensorType: SensorType, _ value: Double = 0) {
+    init(sensorType: SensorType, _ samples: [Sample]) {
         self.id = sensorType.rawValue
-        self.value = value
+        self.samples = samples
+        self.value = samples.first?.value ?? 0
         switch sensorType {
         case .humidity:
             self.image = "drop"
@@ -49,7 +51,7 @@ enum SensorType: String, CaseIterable {
     static var samples: [Sensor] = SensorType.allCases.map { $0.sample }
     
     var sample: Sensor {
-        var sensor = Sensor(sensorType: self)
+        var sensor = Sensor(sensorType: self, [])
         switch self {
         case .humidity:
             sensor.value = 56
