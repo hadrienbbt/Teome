@@ -23,11 +23,11 @@ struct SensorList: View {
             Spacer()
         }
         .padding(.horizontal)
-        .navigationBarTitle("Sensors")
+        .navigationBarTitle("Capteurs")
         .if(deviceId != nil) { view in
             view.toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Unpair", action: {
+                    Button("Dissocier", action: {
                         self.sensorViewModel.listener?.remove()
                         self.sensorViewModel.sensors.removeAll()
                         self.ssidViewModel.unpairDevice(deviceId: deviceId!)
