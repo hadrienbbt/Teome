@@ -29,6 +29,7 @@
 		48559E8D2751CDB7007A57F4 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48559E8C2751CDB7007A57F4 /* Main.swift */; };
 		48559E8E2751CDB7007A57F4 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48559E8C2751CDB7007A57F4 /* Main.swift */; };
 		4874CB23276FF7BE001CD441 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 4874CB22276FF7BE001CD441 /* QRCode */; };
+		4874CB26277006EF001CD441 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4874CB25277006EF001CD441 /* SwiftUICharts */; };
 		487E9B1C2749E7ED00049C76 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 487E9B1B2749E7ED00049C76 /* CodeScanner */; };
 		488789AE274976BD00241835 /* WidgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789AD274976BD00241835 /* WidgetDetails.swift */; };
 		488789AF274976BD00241835 /* WidgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789AD274976BD00241835 /* WidgetDetails.swift */; };
@@ -98,6 +99,7 @@
 				4874CB23276FF7BE001CD441 /* QRCode in Frameworks */,
 				4834ABF7274A89380035DC6E /* NetworkExtension.framework in Frameworks */,
 				371848A193F54354551BEECB /* Pods_Teome__iOS_.framework in Frameworks */,
+				4874CB26277006EF001CD441 /* SwiftUICharts in Frameworks */,
 				487E9B1C2749E7ED00049C76 /* CodeScanner in Frameworks */,
 				4834ABFD274A8F4D0035DC6E /* Swifter in Frameworks */,
 			);
@@ -254,6 +256,7 @@
 				487E9B1B2749E7ED00049C76 /* CodeScanner */,
 				4834ABFC274A8F4D0035DC6E /* Swifter */,
 				4874CB22276FF7BE001CD441 /* QRCode */,
+				4874CB25277006EF001CD441 /* SwiftUICharts */,
 			);
 			productName = "Teome (iOS)";
 			productReference = 48B539B5274509DE009A26B0 /* Teome.app */;
@@ -312,6 +315,7 @@
 				488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */,
 				487E9B1A2749E7ED00049C76 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				4834ABFB274A8F4D0035DC6E /* XCRemoteSwiftPackageReference "swifter" */,
+				4874CB24277006EF001CD441 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
 			);
 			productRefGroup = 48B539B6274509DE009A26B0 /* Products */;
 			projectDirPath = "";
@@ -764,6 +768,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		4874CB24277006EF001CD441 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/willdale/SwiftUICharts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		487E9B1A2749E7ED00049C76 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner";
@@ -792,6 +804,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */;
 			productName = QRCode;
+		};
+		4874CB25277006EF001CD441 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4874CB24277006EF001CD441 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
 		};
 		487E9B1B2749E7ED00049C76 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
