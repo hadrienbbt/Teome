@@ -11,7 +11,7 @@ enum SSIDLoadingState: String {
     case fetchDeviceReachableSSIDs = "Recherche des points d'accès"
     case setDeviceCurrentSSID = "Envoi des identifiants WiFi"
     case unpairDevice = "Dissociation en cours"
-    case pressReseet = "Appuyez sur le bouton RESET"
+    case pressReset = "Appuyez sur le bouton RESET"
     case rebootingDevice = "Redémarrage de l'appareil"
 }
 
@@ -126,7 +126,7 @@ class SSIDViewModel: ObservableObject {
                     print(error)
                     return
                 }
-                self.loading = SSIDLoadingState.pressReseet
+                self.loading = SSIDLoadingState.pressReset
                 // Stub
                 Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
                     self.deviceIP = nil
