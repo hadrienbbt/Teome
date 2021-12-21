@@ -9,12 +9,11 @@ class SensorViewModel: ObservableObject {
             ValueStore().sensors = sensors
         }
     }
-    @Published var updatedAt = ValueStore().updatedAt {
-        didSet {
-            ValueStore().updatedAt = updatedAt
-        }
-    }
     @Published var loading: SensorLoadingState?
+    
+    var updatedAt: Date? {
+        return self.sensors.first?.samples.first?.date
+    }
     
     var listener: ListenerRegistration?
     
