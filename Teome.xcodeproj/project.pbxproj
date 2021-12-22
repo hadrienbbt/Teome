@@ -36,6 +36,8 @@
 		488789B427499F8800241835 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 488789B327499F8800241835 /* QRCode */; };
 		488789B62749A20B00241835 /* TeomeQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789B52749A20B00241835 /* TeomeQRCode.swift */; };
 		488789B72749A20B00241835 /* TeomeQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789B52749A20B00241835 /* TeomeQRCode.swift */; };
+		4889554A2772ABB2008432A8 /* NotificationPermissionAsker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488955492772ABB2008432A8 /* NotificationPermissionAsker.swift */; };
+		4889554B2772ABB2008432A8 /* NotificationPermissionAsker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488955492772ABB2008432A8 /* NotificationPermissionAsker.swift */; };
 		48B539BE274509DE009A26B0 /* TeomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AE274509D5009A26B0 /* TeomeApp.swift */; };
 		48B539BF274509DE009A26B0 /* TeomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AE274509D5009A26B0 /* TeomeApp.swift */; };
 		48B539C0274509DE009A26B0 /* SensorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AF274509D5009A26B0 /* SensorList.swift */; };
@@ -78,6 +80,7 @@
 		48559E8C2751CDB7007A57F4 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		488789AD274976BD00241835 /* WidgetDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDetails.swift; sourceTree = "<group>"; };
 		488789B52749A20B00241835 /* TeomeQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeomeQRCode.swift; sourceTree = "<group>"; };
+		488955492772ABB2008432A8 /* NotificationPermissionAsker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionAsker.swift; sourceTree = "<group>"; };
 		48B539AE274509D5009A26B0 /* TeomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeomeApp.swift; sourceTree = "<group>"; };
 		48B539AF274509D5009A26B0 /* SensorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorList.swift; sourceTree = "<group>"; };
 		48B539B5274509DE009A26B0 /* Teome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teome.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +223,7 @@
 				4834ABF8274A89DE0035DC6E /* HotspotConfiguration.swift */,
 				4834ABFE274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift */,
 				4842F5B6274AEB29002EB954 /* DeviceCom.swift */,
+				488955492772ABB2008432A8 /* NotificationPermissionAsker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -449,6 +453,7 @@
 				48B539D92746E861009A26B0 /* SensorViewModel.swift in Sources */,
 				48C52FAE2770E23300C3F088 /* Sample.swift in Sources */,
 				48C52FAB2770B16C00C3F088 /* SampleViewModel.swift in Sources */,
+				4889554A2772ABB2008432A8 /* NotificationPermissionAsker.swift in Sources */,
 				48B539DC2746E899009A26B0 /* Sensor.swift in Sources */,
 				48B539C0274509DE009A26B0 /* SensorList.swift in Sources */,
 				4834ABF9274A89DE0035DC6E /* HotspotConfiguration.swift in Sources */,
@@ -476,6 +481,7 @@
 				48B539DA2746E861009A26B0 /* SensorViewModel.swift in Sources */,
 				48C52FAF2770E23300C3F088 /* Sample.swift in Sources */,
 				48C52FAC2770B16C00C3F088 /* SampleViewModel.swift in Sources */,
+				4889554B2772ABB2008432A8 /* NotificationPermissionAsker.swift in Sources */,
 				48B539DD2746E899009A26B0 /* Sensor.swift in Sources */,
 				48B539C1274509DE009A26B0 /* SensorList.swift in Sources */,
 				4834ABFA274A89DE0035DC6E /* HotspotConfiguration.swift in Sources */,
