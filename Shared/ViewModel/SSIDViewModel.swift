@@ -117,20 +117,13 @@ class SSIDViewModel: ObservableObject {
     
     func unpairDevice(deviceId: String) {
         self.loading = SSIDLoadingState.unpairDevice
-        Firestore
-            .firestore()
-            .collection("sensors")
-            .document(deviceId)
-            .delete { error in
-                if let error = error {
-                    print(error)
-                    return
-                }
-                self.loading = SSIDLoadingState.pressReset
-                // Stub
-                Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
-                    self.deviceIP = nil
-                }
+        // Stub
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+            self.loading = SSIDLoadingState.pressReset
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+                self.deviceIP = nil
             }
+
+        }
     }
 }
