@@ -1,6 +1,22 @@
 import SwiftUI
+import SwiftUICharts
 
 extension View {
+    public func sensorChart<T>(chartData: T, withLegend: Bool = true) -> some View where T: CTLineBarChartDataProtocol {
+        self
+            .xAxisGrid(chartData: chartData)
+            .yAxisGrid(chartData: chartData)
+            .xAxisLabels(chartData: chartData)
+            .yAxisLabels(chartData: chartData)
+            .if(withLegend) { chart in
+                chart.legends(
+                    chartData: chartData,
+                    columns: [GridItem(.flexible()), GridItem(.flexible())],
+                    iconWidth: 30, font: .subheadline,
+                    textColor: .secondary
+                )
+            }
+    }
     public func withBackgoundGradient(alignment: Alignment = .center) -> some View {
         BackgroundGradient(alignment: alignment) { self }
     }
@@ -27,7 +43,18 @@ extension View {
      }
 }
 
+extension Array where Element: Hashable {
+    func deduplicate() -> Array {
+        return Array(Set(self))
+    }
+}
+
 extension Date {
+    
+    var isToday: Bool {
+        return Calendar.current.dateComponents([.day], from: self, to: Date()).day == 0
+    }
+    
     var timeAgo: String {
         let calendar = Calendar.current
         let minuteAgo = calendar.date(byAdding: .minute, value: -1, to: Date())!
