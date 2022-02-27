@@ -38,6 +38,12 @@
 		488789B72749A20B00241835 /* TeomeQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789B52749A20B00241835 /* TeomeQRCode.swift */; };
 		4889554A2772ABB2008432A8 /* NotificationPermissionAsker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488955492772ABB2008432A8 /* NotificationPermissionAsker.swift */; };
 		4889554B2772ABB2008432A8 /* NotificationPermissionAsker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488955492772ABB2008432A8 /* NotificationPermissionAsker.swift */; };
+		48895550277CD0AB008432A8 /* SampleRelativeDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889554F277CD0AA008432A8 /* SampleRelativeDateFormatter.swift */; };
+		48895551277CD0AB008432A8 /* SampleRelativeDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4889554F277CD0AA008432A8 /* SampleRelativeDateFormatter.swift */; };
+		48B357852785D64B005E543A /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B357842785D64B005E543A /* Plant.swift */; };
+		48B357862785D64B005E543A /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B357842785D64B005E543A /* Plant.swift */; };
+		48B357882785DC8A005E543A /* PlantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B357872785DC8A005E543A /* PlantList.swift */; };
+		48B357892785DC8A005E543A /* PlantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B357872785DC8A005E543A /* PlantList.swift */; };
 		48B539BE274509DE009A26B0 /* TeomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AE274509D5009A26B0 /* TeomeApp.swift */; };
 		48B539BF274509DE009A26B0 /* TeomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AE274509D5009A26B0 /* TeomeApp.swift */; };
 		48B539C0274509DE009A26B0 /* SensorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539AF274509D5009A26B0 /* SensorList.swift */; };
@@ -81,6 +87,9 @@
 		488789AD274976BD00241835 /* WidgetDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDetails.swift; sourceTree = "<group>"; };
 		488789B52749A20B00241835 /* TeomeQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeomeQRCode.swift; sourceTree = "<group>"; };
 		488955492772ABB2008432A8 /* NotificationPermissionAsker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionAsker.swift; sourceTree = "<group>"; };
+		4889554F277CD0AA008432A8 /* SampleRelativeDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleRelativeDateFormatter.swift; sourceTree = "<group>"; };
+		48B357842785D64B005E543A /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Plant.swift; path = ../../../teomeApp/Shared/Model/Plant.swift; sourceTree = "<group>"; };
+		48B357872785DC8A005E543A /* PlantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlantList.swift; path = ../../../teomeApp/Shared/View/PlantList.swift; sourceTree = "<group>"; };
 		48B539AE274509D5009A26B0 /* TeomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeomeApp.swift; sourceTree = "<group>"; };
 		48B539AF274509D5009A26B0 /* SensorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorList.swift; sourceTree = "<group>"; };
 		48B539B5274509DE009A26B0 /* Teome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teome.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +204,7 @@
 			children = (
 				48B539DB2746E899009A26B0 /* Sensor.swift */,
 				48C52FAD2770E23300C3F088 /* Sample.swift */,
+				48B357842785D64B005E543A /* Plant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +221,7 @@
 				488789AD274976BD00241835 /* WidgetDetails.swift */,
 				488789B52749A20B00241835 /* TeomeQRCode.swift */,
 				4842F5BC274BB789002EB954 /* BackgroundGradient.swift */,
+				48B357872785DC8A005E543A /* PlantList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,6 +235,7 @@
 				4834ABFE274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift */,
 				4842F5B6274AEB29002EB954 /* DeviceCom.swift */,
 				488955492772ABB2008432A8 /* NotificationPermissionAsker.swift */,
+				4889554F277CD0AA008432A8 /* SampleRelativeDateFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -449,6 +461,7 @@
 				48559E8D2751CDB7007A57F4 /* Main.swift in Sources */,
 				4842F5C3274BBE1C002EB954 /* SSIDViewModel.swift in Sources */,
 				4834AC02274AD7C90035DC6E /* LocationViewModel.swift in Sources */,
+				48B357852785D64B005E543A /* Plant.swift in Sources */,
 				488789AE274976BD00241835 /* WidgetDetails.swift in Sources */,
 				48B539D92746E861009A26B0 /* SensorViewModel.swift in Sources */,
 				48C52FAE2770E23300C3F088 /* Sample.swift in Sources */,
@@ -458,10 +471,12 @@
 				48B539C0274509DE009A26B0 /* SensorList.swift in Sources */,
 				4834ABF9274A89DE0035DC6E /* HotspotConfiguration.swift in Sources */,
 				48B539E02746E973009A26B0 /* extensions.swift in Sources */,
+				48B357882785DC8A005E543A /* PlantList.swift in Sources */,
 				488789B62749A20B00241835 /* TeomeQRCode.swift in Sources */,
 				4842F5B7274AEB29002EB954 /* DeviceCom.swift in Sources */,
 				48B539D02746E2EF009A26B0 /* ValueStore.swift in Sources */,
 				48B539BE274509DE009A26B0 /* TeomeApp.swift in Sources */,
+				48895550277CD0AB008432A8 /* SampleRelativeDateFormatter.swift in Sources */,
 				48B539D62746E790009A26B0 /* Widget.swift in Sources */,
 				4834ABFF274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift in Sources */,
 				4842F5BA274BADF6002EB954 /* PairDevice.swift in Sources */,
@@ -477,6 +492,7 @@
 				48559E8E2751CDB7007A57F4 /* Main.swift in Sources */,
 				4842F5C4274BBE1C002EB954 /* SSIDViewModel.swift in Sources */,
 				4834AC03274AD7C90035DC6E /* LocationViewModel.swift in Sources */,
+				48B357862785D64B005E543A /* Plant.swift in Sources */,
 				488789AF274976BD00241835 /* WidgetDetails.swift in Sources */,
 				48B539DA2746E861009A26B0 /* SensorViewModel.swift in Sources */,
 				48C52FAF2770E23300C3F088 /* Sample.swift in Sources */,
@@ -486,10 +502,12 @@
 				48B539C1274509DE009A26B0 /* SensorList.swift in Sources */,
 				4834ABFA274A89DE0035DC6E /* HotspotConfiguration.swift in Sources */,
 				48B539E12746E973009A26B0 /* extensions.swift in Sources */,
+				48B357892785DC8A005E543A /* PlantList.swift in Sources */,
 				488789B72749A20B00241835 /* TeomeQRCode.swift in Sources */,
 				4842F5B8274AEB29002EB954 /* DeviceCom.swift in Sources */,
 				48B539D12746E2EF009A26B0 /* ValueStore.swift in Sources */,
 				48B539BF274509DE009A26B0 /* TeomeApp.swift in Sources */,
+				48895551277CD0AB008432A8 /* SampleRelativeDateFormatter.swift in Sources */,
 				48B539D72746E790009A26B0 /* Widget.swift in Sources */,
 				4834AC00274A8F610035DC6E /* SwifterMobileConfigDistributionServer.swift in Sources */,
 				4842F5BB274BADF6002EB954 /* PairDevice.swift in Sources */,

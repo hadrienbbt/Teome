@@ -59,8 +59,11 @@ struct Widget: View {
                         Spacer()
                         close
                     }.padding()
-                    LineChart(chartData: sampleViewModel.chartData)
-                            .frame(height: 400)
+                    MultiLineChart(chartData: sampleViewModel.chartData)
+                        .sensorChart(chartData: sampleViewModel.chartData)
+                        .frame(height: 400)
+                        .padding()
+                    PlantList()
                 }
             } else {
                 VStack(alignment: .leading) {

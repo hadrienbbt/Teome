@@ -8,6 +8,10 @@ struct Sensor: Identifiable, Decodable, Encodable {
     let unit: String
     var samples: [Sample]
     
+    var type: SensorType {
+        return SensorType(rawValue: id)!
+    }
+    
     var formattedValue: String {
         return String(format: "%.0f", round(value))
     }
