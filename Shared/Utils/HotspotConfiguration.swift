@@ -31,7 +31,7 @@ class HotspotConfiguration {
                 wiFiQRCode: wiFiQRCode,
                 organization: .init(organizationName: "Fedutia"),
                 identifier: .init(identifier: "fr.fedutia.Teome"),
-                description: "Connect tot the device",
+                description: "Connect to the device",
                 displayName: .init(displayName: "Teome"),
                 consentText: .init(consentTextsForEachLanguages: [.default: "Would you join the Wi-Fi network that manged by Fedutia?"])
             )
