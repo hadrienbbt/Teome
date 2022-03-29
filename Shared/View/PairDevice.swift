@@ -1,14 +1,53 @@
 import Foundation
 import SwiftUI
 import CodeScanner
+import Network
 
 struct PairDevice: View {
     @ObservedObject var ssidViewModel: SSIDViewModel
     @ObservedObject var sensorViewModel: SensorViewModel
     @State private var isShowingScanner = false
-    
+    @State private var scannedCode: String?
+
     private var axis: Axis.Set {
         return ssidViewModel.isConnectedToDevice && ssidViewModel.deviceReachableSSIDs.isEmpty ? [] : .vertical
+    }
+    
+    private var toolbarItem: some ToolbarContent {        
+        if ssidViewModel.isConnectedToDevice {
+            return ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Refresh", action: ssidViewModel.fetchDeviceReachableSSIDs)
+                    .disabled(ssidViewModel.loading != nil) as! Button<Text>
+            }
+        } else {
+            return ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Scan", action: {
+                    isShowingScanner = true
+                })
+            }
+        }
+    }
+    
+    private var QRDCodeSheet: CodeScannerView {
+        return CodeScannerView(codeTypes: [.qr]) { response in
+            if case let .success(result) = response {
+                guard let ssid = result
+                    .components(separatedBy: ";")
+                    .first?
+                    .components(separatedBy: ":")
+                    .last,
+                      let ip = IPv4Address("192.168.1.1") else {
+                    print("Invalid QRCode")
+                    return
+                }
+                scannedCode = result
+                isShowingScanner = false
+                ssidViewModel.deviceSSID = ssid
+                ssidViewModel.deviceIP = ip.rawValue
+                sensorViewModel.listenSensors()
+            }
+        }
+
     }
     
     var body: some View {
@@ -47,14 +86,8 @@ struct PairDevice: View {
         // TODO: Make this work
         // .withBackgoundGradient()
         .navigationBarTitle("Teome")
-        .if(ssidViewModel.isConnectedToDevice) { view in
-            view.toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Refresh", action: ssidViewModel.fetchDeviceReachableSSIDs)
-                        .disabled(ssidViewModel.loading != nil)
-                }
-            }
-        }
+        .toolbar { toolbarItem }
+        .sheet(isPresented: $isShowingScanner) { QRDCodeSheet }
     }
 }
 
