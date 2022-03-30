@@ -13,14 +13,12 @@ struct PairDevice: View {
         return ssidViewModel.isConnectedToDevice && ssidViewModel.deviceReachableSSIDs.isEmpty ? [] : .vertical
     }
     
-    private var toolbarItem: some ToolbarContent {        
-        if ssidViewModel.isConnectedToDevice {
-            return ToolbarItem(placement: .navigationBarTrailing) {
+    private var toolbarContent: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            if ssidViewModel.isConnectedToDevice {
                 Button("Refresh", action: ssidViewModel.fetchDeviceReachableSSIDs)
-                    .disabled(ssidViewModel.loading != nil) as! Button<Text>
-            }
-        } else {
-            return ToolbarItem(placement: .navigationBarTrailing) {
+                    .disabled(ssidViewModel.loading != nil)
+            } else {
                 Button("Scan", action: {
                     isShowingScanner = true
                 })
@@ -86,7 +84,7 @@ struct PairDevice: View {
         // TODO: Make this work
         // .withBackgoundGradient()
         .navigationBarTitle("Teome")
-        .toolbar { toolbarItem }
+        .toolbar { toolbarContent }
         .sheet(isPresented: $isShowingScanner) { QRDCodeSheet }
     }
 }
