@@ -1,4 +1,6 @@
 import UserNotifications
+import UIKit
+import FirebaseFirestore
 
 enum NotificationType: String {
     case unpair
@@ -17,6 +19,9 @@ class NotificationManager: NSObject {
                 case .notDetermined:
                     self.center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
                         if granted {
+                            DispatchQueue.main.async {
+                                UIApplication.shared.registerForRemoteNotifications()
+                            }
                             completion(.authorized, prevStatus)
                         } else {
                             completion(.denied, prevStatus)
@@ -34,6 +39,15 @@ class NotificationManager: NSObject {
             let isEnabled = settings.authorizationStatus == .authorized
             completion(isEnabled)
         }
+    }
+    
+    func saveDeviceToken(_ deviceToken: String) {
+        guard let deviceId = ValueStore().deviceId else { return }
+        Firestore
+            .firestore()
+            .collection("sensors")
+            .document(deviceId)
+            .setData(["apnDeviceToken": deviceToken])
     }
     
     func resetLocalNotifications() {

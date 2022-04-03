@@ -5,6 +5,11 @@ class ValueStore {
     
     let suiteName = "group.fr.fedutia.Teome"
     
+    var deviceToken: String? {
+        get { return read("deviceToken") as? String }
+        set { write("deviceToken", newValue) }
+    }
+    
     var deviceSSID: String? {
         get { return read("deviceSSID") as? String }
         set { write("deviceSSID", newValue) }
