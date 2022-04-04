@@ -111,6 +111,7 @@ class SSIDViewModel: ObservableObject {
                 }
                 self.deviceIP = deviceIP.rawValue
                 self.loading = SSIDLoadingState.rebootingDevice
+                NotificationManager().configure()
             }
         }
     }

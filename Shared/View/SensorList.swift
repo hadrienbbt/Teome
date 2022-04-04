@@ -67,7 +67,6 @@ struct SensorList: View {
         .animation(.easeInOut(duration: 0.3), value: selected?.id)
         .onAppear {
             sensorViewModel.listenSensors()
-            NotificationManager().resetLocalNotifications()
         }
     }
 }
