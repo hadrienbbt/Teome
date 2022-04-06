@@ -10,6 +10,7 @@ class SensorViewModel: ObservableObject {
         }
     }
     @Published var loading: SensorLoadingState?
+    @Published var qrcode: String?
     
     var updatedAt: Date? {
         return self.sensors.first?.samples.first?.date
@@ -17,7 +18,24 @@ class SensorViewModel: ObservableObject {
     
     var listener: ListenerRegistration?
     
-    func listenSensors() {
+    func configure() {
+        guard let deviceId = ValueStore().deviceId else {
+            print("❌ Error: No device SSID")
+            return
+        }
+        print("Configuring for device ID: \(deviceId)")
+
+        listenSensors(deviceId)
+        
+        ServerCom().getQRCode(deviceId) { qrcode in
+            guard let qrcode = qrcode else { return }
+            DispatchQueue.main.async {
+                self.qrcode = qrcode
+            }
+        }
+    }
+    
+    func listenSensors(_ deviceId: String) {
         loading = SensorLoadingState.listenSensors
         guard let deviceId = ValueStore().deviceId else {
             print("❌ Error: No device SSID")
@@ -26,7 +44,6 @@ class SensorViewModel: ObservableObject {
         if let listener = listener {
             listener.remove()
         }
-        print("Device ID: \(deviceId)")
         self.listener = Firestore
             .firestore()
             .collection("sensors")

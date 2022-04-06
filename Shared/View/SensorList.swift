@@ -6,6 +6,7 @@ struct SensorList: View {
 
     @State private var selected: Sensor?
     @State private var deviceId: String? = ValueStore().deviceId
+    @State private var isShowingQRCode = false
     
     @Namespace private var widgetEffect
     
@@ -39,12 +40,21 @@ struct SensorList: View {
                 .navigationBarTitle("Capteurs")
                 .if(deviceId != nil) { view in
                     view.toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button("Dissocier", action: {
-                                self.sensorViewModel.listener?.remove()
-                                self.sensorViewModel.sensors.removeAll()
-                                self.ssidViewModel.unpairDevice(deviceId: deviceId!)
-                            })
+                        ToolbarItem(placement: .primaryAction) {
+                            Menu {
+                                if sensorViewModel.qrcode != nil {
+                                    Button("Afficher le QR Code", action: {
+                                        isShowingQRCode = true
+                                    })
+                                }
+                                Button("Dissocier", action: {
+                                    sensorViewModel.listener?.remove()
+                                    sensorViewModel.sensors.removeAll()
+                                    ssidViewModel.unpairDevice(deviceId: deviceId!)
+                                })
+                            } label: {
+                                Label("Options", systemImage: "ellipsis.circle")
+                            }
                         }
                     }
                 }
@@ -64,9 +74,13 @@ struct SensorList: View {
                 .background(.ultraThinMaterial)
             }
         }
+        .sheet(isPresented: $isShowingQRCode) {
+            Image(base64String: sensorViewModel.qrcode!)
+                .frame(width: 150, height: 150, alignment: .center)
+        }
         .animation(.easeInOut(duration: 0.3), value: selected?.id)
         .onAppear {
-            sensorViewModel.listenSensors()
+            sensorViewModel.configure()
         }
     }
 }

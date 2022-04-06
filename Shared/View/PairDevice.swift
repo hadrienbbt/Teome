@@ -42,7 +42,7 @@ struct PairDevice: View {
                 isShowingScanner = false
                 ssidViewModel.deviceSSID = ssid
                 ssidViewModel.deviceIP = ip.rawValue
-                sensorViewModel.listenSensors()
+                sensorViewModel.configure()
             }
         }
 
@@ -73,7 +73,7 @@ struct PairDevice: View {
                     } else if let loading = sensorViewModel.loading {
                         CenteredProgressView(title: loading.rawValue)
                     } else if ssidViewModel.ssid != nil {
-                        CenteredProgressView().onAppear(perform: sensorViewModel.listenSensors)
+                        CenteredProgressView().onAppear(perform: sensorViewModel.configure)
                     } else {
                         CenteredProgressView(title: "Reconnecter l'internet")
                     }

@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftUICharts
+import UIKit
 
 extension View {
     public func sensorChart<T>(chartData: T, withLegend: Bool = true) -> some View where T: CTLineBarChartDataProtocol {
@@ -41,6 +42,15 @@ extension View {
              self
          }
      }
+}
+
+extension Image {
+    init?(base64String: String) {
+        guard let url = URL(string: base64String),
+              let data = try? Data(contentsOf: url),
+              let uiImage = UIImage(data: data) else { return nil}
+        self = Image(uiImage: uiImage)
+    }
 }
 
 extension Array where Element: Hashable {
