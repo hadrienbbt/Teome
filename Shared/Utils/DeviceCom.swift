@@ -14,7 +14,7 @@ class ServerCom {
             completion(nil)
             return
         }
-        var request = URLRequest(url: URL(string: "http://192.168.1.150:8000/qrcode")!)
+        var request = URLRequest(url: URL(string: "https://teome.fedutia.fr/qrcode")!)
         request.httpMethod = Method.POST.rawValue
         request.httpBody = body
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
