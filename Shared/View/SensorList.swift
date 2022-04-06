@@ -43,14 +43,18 @@ struct SensorList: View {
                         ToolbarItem(placement: .primaryAction) {
                             Menu {
                                 if sensorViewModel.qrcode != nil {
-                                    Button("Afficher le QR Code", action: {
+                                    Button(action: {
                                         isShowingQRCode = true
+                                    }, label: {
+                                        Label("Afficher le QR Code", systemImage: "qrcode")
                                     })
                                 }
-                                Button("Dissocier", action: {
+                                Button(action: {
                                     sensorViewModel.listener?.remove()
                                     sensorViewModel.sensors.removeAll()
                                     ssidViewModel.unpairDevice(deviceId: deviceId!)
+                                }, label: {
+                                    Label("Dissocier", systemImage: "trash")
                                 })
                             } label: {
                                 Label("Options", systemImage: "ellipsis.circle")
