@@ -31160,6 +31160,7 @@
 			baseConfigurationReference = 79ED8A062C81D6DEBD80F43E0131F9F4 /* gRPC-C++-iOS.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/gRPC-C++-iOS";
+				DEVELOPMENT_TEAM = T7562M4U35;
 				IBSC_MODULE = grpcpp;
 				INFOPLIST_FILE = "Target Support Files/gRPC-C++-iOS/ResourceBundle-gRPCCertificates-Cpp-gRPC-C++-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -32383,6 +32384,7 @@
 			baseConfigurationReference = EB18A115F1C1B2C19C968B44CC3CE8F0 /* gRPC-C++-iOS.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/gRPC-C++-iOS";
+				DEVELOPMENT_TEAM = T7562M4U35;
 				IBSC_MODULE = grpcpp;
 				INFOPLIST_FILE = "Target Support Files/gRPC-C++-iOS/ResourceBundle-gRPCCertificates-Cpp-gRPC-C++-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
