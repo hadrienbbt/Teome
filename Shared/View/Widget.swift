@@ -1,15 +1,10 @@
 import SwiftUI
-import SwiftUICharts
 
 struct Widget: View {
     @Binding var sensor: Sensor
     @Binding var isSelected: Bool
     
     @Namespace private var widgetEffect
-    
-    var sampleViewModel: SampleViewModel {
-        return SampleViewModel(samples: sensor.samples)
-    }
     
     var imageSize: CGFloat {
         return isSelected ? 50 : 40
@@ -59,10 +54,7 @@ struct Widget: View {
                         Spacer()
                         close
                     }.padding()
-                    MultiLineChart(chartData: sampleViewModel.chartData)
-                        .sensorChart(chartData: sampleViewModel.chartData)
-                        .frame(height: 400)
-                        .padding()
+                    SensorChart(sensor: sensor)
                     PlantList()
                 }
             } else {

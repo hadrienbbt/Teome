@@ -1,23 +1,7 @@
 import SwiftUI
-import SwiftUICharts
 import UIKit
 
 extension View {
-    public func sensorChart<T>(chartData: T, withLegend: Bool = true) -> some View where T: CTLineBarChartDataProtocol {
-        self
-            .xAxisGrid(chartData: chartData)
-            .yAxisGrid(chartData: chartData)
-            .xAxisLabels(chartData: chartData)
-            .yAxisLabels(chartData: chartData)
-            .if(withLegend) { chart in
-                chart.legends(
-                    chartData: chartData,
-                    columns: [GridItem(.flexible()), GridItem(.flexible())],
-                    iconWidth: 30, font: .subheadline,
-                    textColor: .secondary
-                )
-            }
-    }
     public func withBackgoundGradient(alignment: Alignment = .center) -> some View {
         BackgroundGradient(alignment: alignment) { self }
     }
