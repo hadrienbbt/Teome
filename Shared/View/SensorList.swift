@@ -28,9 +28,11 @@ struct SensorList: View {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach($sensorViewModel.sensors) { sensor in
-                            Widget(sensor: sensor, isSelected: isSelected(sensor.wrappedValue))
-                                .matchedGeometryEffect(id: sensor.id, in: widgetEffect)
-                                .onTapGesture { selected = sensor.wrappedValue }
+                            if sensor.id != "soil" || sensorViewModel.showSoilSensor {
+                                Widget(sensor: sensor, isSelected: isSelected(sensor.wrappedValue))
+                                    .matchedGeometryEffect(id: sensor.id, in: widgetEffect)
+                                    .onTapGesture { selected = sensor.wrappedValue }
+                            }
                         }
                     }
                     .padding()
@@ -56,6 +58,11 @@ struct SensorList: View {
                                     ssidViewModel.unpairDevice(deviceId: deviceId!)
                                 }, label: {
                                     Label("Dissocier", systemImage: "trash")
+                                })
+                                Button(action: {
+                                    sensorViewModel.showSoilSensor = !sensorViewModel.showSoilSensor
+                                }, label: {
+                                    Label("\(sensorViewModel.showSoilSensor ? "Cacher" : "Afficher") l'humidité de la plante", systemImage: sensorViewModel.showSoilSensor ? "leaf" : "leaf.fill")
                                 })
                             } label: {
                                 Label("Options", systemImage: "ellipsis.circle")

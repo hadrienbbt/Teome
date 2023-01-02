@@ -11,6 +11,7 @@ class SensorViewModel: ObservableObject {
     @Published var loading: SensorLoadingState?
     @Published var qrcode: String?
     @Published var showToast: Bool = false
+    @Published var showSoilSensor: Bool = false
     
     var updatedAt: Date? {
         return self.sensors.first?.samples.first?.date
