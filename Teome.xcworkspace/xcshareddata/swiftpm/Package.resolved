@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "alerttoast",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/elai950/AlertToast.git",
+      "state" : {
+        "revision" : "a4f4267f6454259ba4ed8f9dadb87334a789c26c",
+        "version" : "1.3.7"
+      }
+    },
+    {
       "identity" : "codescanner",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/twostraws/CodeScanner",
@@ -25,15 +34,6 @@
       "state" : {
         "revision" : "9483a5d459b45c3ffd059f7b55f9638e268632fd",
         "version" : "1.5.0"
-      }
-    },
-    {
-      "identity" : "swiftuicharts",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/willdale/SwiftUICharts",
-      "state" : {
-        "revision" : "133c493e6f67f4c563ab836aa809bfb66f25111e",
-        "version" : "2.9.6"
       }
     }
   ],

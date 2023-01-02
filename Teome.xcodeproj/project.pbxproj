@@ -29,7 +29,6 @@
 		48559E8D2751CDB7007A57F4 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48559E8C2751CDB7007A57F4 /* Main.swift */; };
 		48559E8E2751CDB7007A57F4 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48559E8C2751CDB7007A57F4 /* Main.swift */; };
 		4874CB23276FF7BE001CD441 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 4874CB22276FF7BE001CD441 /* QRCode */; };
-		4874CB26277006EF001CD441 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 4874CB25277006EF001CD441 /* SwiftUICharts */; };
 		487E9B1C2749E7ED00049C76 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 487E9B1B2749E7ED00049C76 /* CodeScanner */; };
 		488789AE274976BD00241835 /* WidgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789AD274976BD00241835 /* WidgetDetails.swift */; };
 		488789AF274976BD00241835 /* WidgetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488789AD274976BD00241835 /* WidgetDetails.swift */; };
@@ -62,11 +61,12 @@
 		48B539E12746E973009A26B0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539DF2746E973009A26B0 /* extensions.swift */; };
 		48B539E32746F795009A26B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48B539E22746F794009A26B0 /* GoogleService-Info.plist */; };
 		48B539E42746F795009A26B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48B539E22746F794009A26B0 /* GoogleService-Info.plist */; };
-		48C52FAB2770B16C00C3F088 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C52FAA2770B16C00C3F088 /* SampleViewModel.swift */; };
-		48C52FAC2770B16C00C3F088 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C52FAA2770B16C00C3F088 /* SampleViewModel.swift */; };
 		48C52FAE2770E23300C3F088 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C52FAD2770E23300C3F088 /* Sample.swift */; };
 		48C52FAF2770E23300C3F088 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C52FAD2770E23300C3F088 /* Sample.swift */; };
 		865FE617120E2374131BED1B /* Pods_Teome__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFD5E978F7DDECC3EA3D8D6 /* Pods_Teome__macOS_.framework */; };
+		A246EB92292C4052003B9207 /* SensorChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246EB91292C4052003B9207 /* SensorChart.swift */; };
+		A246EB93292C4052003B9207 /* SensorChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246EB91292C4052003B9207 /* SensorChart.swift */; };
+		A246EB96292CE757003B9207 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = A246EB95292CE757003B9207 /* AlertToast */; };
 		A2E93A4527FB714700F8D6F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E93A4427FB714700F8D6F5 /* AppDelegate.swift */; };
 		A2E93A4627FB714700F8D6F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E93A4427FB714700F8D6F5 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -117,8 +117,8 @@
 		48B539DB2746E899009A26B0 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		48B539DF2746E973009A26B0 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		48B539E22746F794009A26B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		48C52FAA2770B16C00C3F088 /* SampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
 		48C52FAD2770E23300C3F088 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
+		A246EB91292C4052003B9207 /* SensorChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorChart.swift; sourceTree = "<group>"; };
 		A2E93A4427FB714700F8D6F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5BFFB389619325E428A67A1 /* Pods-Teome (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teome (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Teome (macOS)/Pods-Teome (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		DCFD5E978F7DDECC3EA3D8D6 /* Pods_Teome__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teome__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,9 +131,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4874CB23276FF7BE001CD441 /* QRCode in Frameworks */,
+				A246EB96292CE757003B9207 /* AlertToast in Frameworks */,
 				4834ABF7274A89380035DC6E /* NetworkExtension.framework in Frameworks */,
 				371848A193F54354551BEECB /* Pods_Teome__iOS_.framework in Frameworks */,
-				4874CB26277006EF001CD441 /* SwiftUICharts in Frameworks */,
 				487E9B1C2749E7ED00049C76 /* CodeScanner in Frameworks */,
 				4834ABFD274A8F4D0035DC6E /* Swifter in Frameworks */,
 			);
@@ -211,7 +211,6 @@
 				48B539D82746E861009A26B0 /* SensorViewModel.swift */,
 				4842F5C2274BBE1C002EB954 /* SSIDViewModel.swift */,
 				4834AC01274AD7C90035DC6E /* LocationViewModel.swift */,
-				48C52FAA2770B16C00C3F088 /* SampleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -239,6 +238,7 @@
 				488789B52749A20B00241835 /* TeomeQRCode.swift */,
 				4842F5BC274BB789002EB954 /* BackgroundGradient.swift */,
 				48B357872785DC8A005E543A /* PlantList.swift */,
+				A246EB91292C4052003B9207 /* SensorChart.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 				487E9B1B2749E7ED00049C76 /* CodeScanner */,
 				4834ABFC274A8F4D0035DC6E /* Swifter */,
 				4874CB22276FF7BE001CD441 /* QRCode */,
-				4874CB25277006EF001CD441 /* SwiftUICharts */,
+				A246EB95292CE757003B9207 /* AlertToast */,
 			);
 			productName = "Teome (iOS)";
 			productReference = 48B539B5274509DE009A26B0 /* Teome.app */;
@@ -357,7 +357,7 @@
 				488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */,
 				487E9B1A2749E7ED00049C76 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				4834ABFB274A8F4D0035DC6E /* XCRemoteSwiftPackageReference "swifter" */,
-				4874CB24277006EF001CD441 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+				A246EB94292CE757003B9207 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = 48B539B6274509DE009A26B0 /* Products */;
 			projectDirPath = "";
@@ -482,8 +482,8 @@
 				48B357852785D64B005E543A /* Plant.swift in Sources */,
 				488789AE274976BD00241835 /* WidgetDetails.swift in Sources */,
 				48B539D92746E861009A26B0 /* SensorViewModel.swift in Sources */,
+				A246EB92292C4052003B9207 /* SensorChart.swift in Sources */,
 				48C52FAE2770E23300C3F088 /* Sample.swift in Sources */,
-				48C52FAB2770B16C00C3F088 /* SampleViewModel.swift in Sources */,
 				4889554A2772ABB2008432A8 /* NotificationManager.swift in Sources */,
 				48B539DC2746E899009A26B0 /* Sensor.swift in Sources */,
 				48B539C0274509DE009A26B0 /* SensorList.swift in Sources */,
@@ -514,8 +514,8 @@
 				48B357862785D64B005E543A /* Plant.swift in Sources */,
 				488789AF274976BD00241835 /* WidgetDetails.swift in Sources */,
 				48B539DA2746E861009A26B0 /* SensorViewModel.swift in Sources */,
+				A246EB93292C4052003B9207 /* SensorChart.swift in Sources */,
 				48C52FAF2770E23300C3F088 /* Sample.swift in Sources */,
-				48C52FAC2770B16C00C3F088 /* SampleViewModel.swift in Sources */,
 				4889554B2772ABB2008432A8 /* NotificationManager.swift in Sources */,
 				48B539DD2746E899009A26B0 /* Sensor.swift in Sources */,
 				48B539C1274509DE009A26B0 /* SensorList.swift in Sources */,
@@ -590,6 +590,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -643,6 +645,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -672,7 +676,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -709,7 +713,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -747,7 +751,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Teome;
 				PRODUCT_NAME = Teome;
@@ -779,7 +783,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.fedutia.Teome;
 				PRODUCT_NAME = Teome;
@@ -830,14 +834,6 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		4874CB24277006EF001CD441 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/willdale/SwiftUICharts";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		487E9B1A2749E7ED00049C76 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner";
@@ -849,6 +845,14 @@
 		488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmrschmidt/QRCode";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		A246EB94292CE757003B9207 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
@@ -867,11 +871,6 @@
 			package = 488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */;
 			productName = QRCode;
 		};
-		4874CB25277006EF001CD441 /* SwiftUICharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4874CB24277006EF001CD441 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
-			productName = SwiftUICharts;
-		};
 		487E9B1B2749E7ED00049C76 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 487E9B1A2749E7ED00049C76 /* XCRemoteSwiftPackageReference "CodeScanner" */;
@@ -881,6 +880,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 488789B027499F6C00241835 /* XCRemoteSwiftPackageReference "QRCode" */;
 			productName = QRCode;
+		};
+		A246EB95292CE757003B9207 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A246EB94292CE757003B9207 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
