@@ -1,6 +1,5 @@
 import SwiftUI
 import Firebase
-import Combine
 import FirebaseFirestore
 
 class SensorViewModel: ObservableObject {
@@ -11,6 +10,7 @@ class SensorViewModel: ObservableObject {
     }
     @Published var loading: SensorLoadingState?
     @Published var qrcode: String?
+    @Published var showToast: Bool = false
     
     var updatedAt: Date? {
         return self.sensors.first?.samples.first?.date
@@ -44,11 +44,17 @@ class SensorViewModel: ObservableObject {
         if let listener = listener {
             listener.remove()
         }
+        let lastMonth = Calendar.current.date(
+            byAdding: .month,
+            value: -1,
+            to: Date()
+        )!
         self.listener = Firestore
             .firestore()
             .collection("sensors")
             .document(deviceId)
             .collection("samples")
+            .whereField("updatedAt", isGreaterThan: lastMonth)
             .order(by: "updatedAt", descending: true)
             .addSnapshotListener { snap, error in
                 guard let docs = snap?.documents else {
@@ -70,6 +76,7 @@ class SensorViewModel: ObservableObject {
                     return Sensor(sensorType: sensorType, samples)
                 }
             self.loading = nil
+            self.showToast = true
         }
     }
 }

@@ -1,4 +1,5 @@
 import SwiftUI
+import AlertToast
 
 struct SensorList: View {
     @ObservedObject var ssidViewModel: SSIDViewModel
@@ -85,6 +86,12 @@ struct SensorList: View {
         .animation(.easeInOut(duration: 0.3), value: selected?.id)
         .onAppear {
             sensorViewModel.configure()
+        }
+        .toast(isPresenting: $sensorViewModel.showToast) {
+            AlertToast(
+                type: .systemImage("checkmark.icloud", .accentColor),
+                title: "Nouvelles données disponibles"
+            )
         }
     }
 }
