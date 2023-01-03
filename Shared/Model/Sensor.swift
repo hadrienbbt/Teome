@@ -3,6 +3,7 @@ import Foundation
 struct Sensor: Identifiable, Decodable, Encodable {
     let id: String
     let image: String
+    let imageType: String
     let title: String
     var value: Double
     let unit: String
@@ -22,23 +23,35 @@ struct Sensor: Identifiable, Decodable, Encodable {
         self.value = samples.first?.value ?? 0
         switch sensorType {
         case .humidity:
-            self.image = "drop"
+            self.image = self.value == -8000 ? "drop.degreesign.slash" :
+                self.value < 50 ? "drop.degreesign" :
+                "drop.degreesign.fill"
+            self.imageType = "sfSymbol"
             self.title = "Humidité"
             self.unit = "%"
         case .temperature:
-            self.image = "thermometer"
+            self.image = self.value == -8000 ? "thermometer.medium.slash" :
+                self.value < 15 ? "thermometer.low" :
+                self.value < 25 ? "thermometer.medium" :
+                "thermometer.high"
+            self.imageType = "sfSymbol"
             self.title = "Température"
             self.unit = "°C"
         case .illuminance:
-            self.image = "sun"
+            self.image = self.value < 100 ? "moon.fill" :
+                self.value < 1000 ? "sun.max" :
+                "sun.max.fill"
+            self.imageType = "sfSymbol"
             self.title = "Luminosité"
             self.unit = "lux"
         case .pressure:
             self.image = "pressure"
+            self.imageType = "custom"
             self.title = "Pression"
             self.unit = "mbar"
         case .soil:
             self.image = "plant"
+            self.imageType = "custom"
             self.title = "Plante"
             self.unit = "%"
         }

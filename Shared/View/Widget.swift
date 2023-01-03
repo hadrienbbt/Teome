@@ -10,11 +10,19 @@ struct Widget: View {
         return isSelected ? 50 : 40
     }
     
+    @ViewBuilder
     var image: some View {
-        Image(sensor.image)
-            .resizable()
-            .frame(width: imageSize, height: imageSize)
-            .padding([.vertical, .trailing], 5)
+        if sensor.imageType == "sfSymbol" {
+            Image(systemName: sensor.image)
+                .renderingMode(.original)
+                .font(.largeTitle)
+                .padding([.vertical, .trailing], 5)
+        } else {
+            Image(sensor.image)
+                .resizable()
+                .frame(width: imageSize, height: imageSize)
+                .padding([.vertical, .trailing], 5)
+        }
     }
     
     var title: some View {
