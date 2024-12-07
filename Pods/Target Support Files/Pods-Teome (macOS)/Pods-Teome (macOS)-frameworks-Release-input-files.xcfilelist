@@ -1,11 +1,13 @@
 ${PODS_ROOT}/Target Support Files/Pods-Teome (macOS)/Pods-Teome (macOS)-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC-macOS/openssl_grpc.framework
+${BUILT_PRODUCTS_DIR}/FirebaseAppCheckInterop-macOS/FirebaseAppCheckInterop.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCore-macOS/FirebaseCore.framework
-${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics-macOS/FirebaseCoreDiagnostics.framework
+${BUILT_PRODUCTS_DIR}/FirebaseCoreExtension-macOS/FirebaseCoreExtension.framework
+${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal-macOS/FirebaseCoreInternal.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseFirestore-macOS/FirebaseFirestore.framework
-${BUILT_PRODUCTS_DIR}/GoogleDataTransport-macOS/GoogleDataTransport.framework
-${BUILT_PRODUCTS_DIR}/GoogleUtilities-Environment-Logger/GoogleUtilities.framework
-${BUILT_PRODUCTS_DIR}/PromisesObjC-macOS/FBLPromises.framework
+${BUILT_PRODUCTS_DIR}/FirebaseFirestoreInternal-macOS/FirebaseFirestoreInternal.framework
+${BUILT_PRODUCTS_DIR}/FirebaseSharedSwift-macOS/FirebaseSharedSwift.framework
+${BUILT_PRODUCTS_DIR}/GoogleUtilities-Environment-Logger-NSData+zlib-Privacy/GoogleUtilities.framework
 ${BUILT_PRODUCTS_DIR}/abseil-macOS/absl.framework
 ${BUILT_PRODUCTS_DIR}/gRPC-C++-macOS/grpcpp.framework
 ${BUILT_PRODUCTS_DIR}/gRPC-Core-macOS/grpc.framework
