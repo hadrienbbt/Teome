@@ -99,12 +99,12 @@ struct SSIDRow: View {
 }
 
 struct CenteredProgressView: View {
-    var title: String = "Chargement"
+    var title: String? = "Chargement"
     
     var body: some View {
         HStack {
             Spacer()
-            if let title = title {
+            if let title {
                 ProgressView(title)
                     .progressViewStyle(.circular)
                     .padding(.top)
