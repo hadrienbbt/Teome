@@ -46,7 +46,7 @@ class ServerCom {
 
 class DeviceCom {
     func query(method: Method, _ params: [String: Any]? = nil, _ completion: @escaping (Any?) -> Void) {
-        var request = URLRequest(url: URL(string: "http://192.168.2.1/ssid")!)
+        var request = URLRequest(url: URL(string: "http://teome.local/ssid")!)
         request.httpMethod = method.rawValue
         if method == .POST, let params = params {
             let body: String = params.reduce("", { (result, param) in
