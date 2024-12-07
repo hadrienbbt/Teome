@@ -59,14 +59,14 @@
 		48B539DD2746E899009A26B0 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539DB2746E899009A26B0 /* Sensor.swift */; };
 		48B539E02746E973009A26B0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539DF2746E973009A26B0 /* extensions.swift */; };
 		48B539E12746E973009A26B0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B539DF2746E973009A26B0 /* extensions.swift */; };
-		48B539E32746F795009A26B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48B539E22746F794009A26B0 /* GoogleService-Info.plist */; };
-		48B539E42746F795009A26B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48B539E22746F794009A26B0 /* GoogleService-Info.plist */; };
 		48C52FAE2770E23300C3F088 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C52FAD2770E23300C3F088 /* Sample.swift */; };
 		48C52FAF2770E23300C3F088 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C52FAD2770E23300C3F088 /* Sample.swift */; };
 		865FE617120E2374131BED1B /* Pods_Teome__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFD5E978F7DDECC3EA3D8D6 /* Pods_Teome__macOS_.framework */; };
 		A246EB92292C4052003B9207 /* SensorChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246EB91292C4052003B9207 /* SensorChart.swift */; };
 		A246EB93292C4052003B9207 /* SensorChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246EB91292C4052003B9207 /* SensorChart.swift */; };
 		A246EB96292CE757003B9207 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = A246EB95292CE757003B9207 /* AlertToast */; };
+		A2D6F8372D03D1A4002E64DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2D6F8352D03D1A4002E64DC /* GoogleService-Info.plist */; };
+		A2D6F8382D03D1A4002E64DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2D6F8352D03D1A4002E64DC /* GoogleService-Info.plist */; };
 		A2E93A4527FB714700F8D6F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E93A4427FB714700F8D6F5 /* AppDelegate.swift */; };
 		A2E93A4627FB714700F8D6F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E93A4427FB714700F8D6F5 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -116,9 +116,9 @@
 		48B539D82746E861009A26B0 /* SensorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorViewModel.swift; sourceTree = "<group>"; };
 		48B539DB2746E899009A26B0 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		48B539DF2746E973009A26B0 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
-		48B539E22746F794009A26B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48C52FAD2770E23300C3F088 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		A246EB91292C4052003B9207 /* SensorChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorChart.swift; sourceTree = "<group>"; };
+		A2D6F8352D03D1A4002E64DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2E93A4427FB714700F8D6F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5BFFB389619325E428A67A1 /* Pods-Teome (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Teome (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Teome (macOS)/Pods-Teome (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		DCFD5E978F7DDECC3EA3D8D6 /* Pods_Teome__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Teome__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,8 +165,8 @@
 		48B539A8274509D2009A26B0 = {
 			isa = PBXGroup;
 			children = (
+				A2D6F8362D03D1A4002E64DC /* Teome */,
 				4834ABF5274A89380035DC6E /* Teome (iOS).entitlements */,
-				48B539E82746FB15009A26B0 /* Teome */,
 				48B539AD274509D5009A26B0 /* Shared */,
 				48B539CC2746C552009A26B0 /* Assets.xcassets */,
 				48B539BC274509DE009A26B0 /* macOS */,
@@ -257,10 +257,10 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		48B539E82746FB15009A26B0 /* Teome */ = {
+		A2D6F8362D03D1A4002E64DC /* Teome */ = {
 			isa = PBXGroup;
 			children = (
-				48B539E22746F794009A26B0 /* GoogleService-Info.plist */,
+				A2D6F8352D03D1A4002E64DC /* GoogleService-Info.plist */,
 			);
 			path = Teome;
 			sourceTree = "<group>";
@@ -375,7 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48B539CD2746C552009A26B0 /* Assets.xcassets in Resources */,
-				48B539E32746F795009A26B0 /* GoogleService-Info.plist in Resources */,
+				A2D6F8382D03D1A4002E64DC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48B539CE2746C552009A26B0 /* Assets.xcassets in Resources */,
-				48B539E42746F795009A26B0 /* GoogleService-Info.plist in Resources */,
+				A2D6F8372D03D1A4002E64DC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
